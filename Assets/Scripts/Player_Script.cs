@@ -1,55 +1,70 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player_Script : MonoBehaviour
 {
+    protected bool is_alive = true;
+    protected float health;
+    protected float max_health = 100.0f;
+    public Image ui_hp_bar_inner;
+
     public float move_speed = 8000.0f;
     public float jump_impulse = 1000000.0f;
     public float rotation = 0.0f;
+
+    private Vector3 start_position;
+
     private float up_axis = 0.0f;
     private float side_axis = 0.0f;
+
     private bool is_grounded = true;
     private bool is_swinging = false;
     private bool slash_held = false;
     private float swing_rotation = -90.0f;
     private GameObject swordHitbox;
+
+    private Rigidbody my_rbody;
+
+
     // Start is called before the first frame update
     void Start()
     {
+        health = max_health;
+        ui_hp_bar_inner.fillAmount = 1.0f;
+
+        start_position = transform.position;
+
+        my_rbody = GetComponent<Rigidbody>();
+
         swordHitbox = GameObject.Find("Sword Hitbox");
         swordHitbox.SetActive(false);
     }
 
-    // Update is called once per frame
-    void FixedUpdate() // This should be used for physics updates
-    {
-        is_grounded = CheckGrounded();
-        AdjustFriction();
-        Jumping();
-        Movement();
-        Swing();
-    }
-
     void Movement()
     {
-        Rigidbody my_rbody = GetComponent<Rigidbody>();
-        this.transform.eulerAngles = new Vector3(0, rotation, 0);
-        if (up_axis != 0.0 | side_axis != 0.0)
+        /// Velocity approach to movement
+        my_rbody.velocity = new Vector3(up_axis * 15, my_rbody.velocity.y, -side_axis * 20);
+
+        /// Force approach to movement
+        /*if (up_axis != 0.0 | side_axis != 0.0)
         {
             Vector3 move_vec = Vector3.right * -move_speed * Time.fixedDeltaTime;
             my_rbody.AddRelativeForce(move_vec, ForceMode.Impulse);
-        }
+        }*/
     }
 
     void Rotation()
     {
-        up_axis = Input.GetAxis("Vertical");
-        side_axis = Input.GetAxis("Horizontal");
-        if (up_axis == 0.0 & side_axis == 0.0)
-        {
-        }
-        else if (up_axis > 0.0 & side_axis == 0.0)
+        if (up_axis == 0.0 & side_axis == 0.0){}
+        else
+            rotation = Mathf.Rad2Deg * Mathf.Atan2(-side_axis, -up_axis);
+        transform.eulerAngles = new Vector3(0, rotation, 0);
+
+        /// Old method for snappy rotation. Saved in case above method runs
+        /// into unforeseen issues
+        /*else if (up_axis > 0.0 & side_axis == 0.0)
         {
             rotation = 180;
         }
@@ -80,7 +95,7 @@ public class Player_Script : MonoBehaviour
         else if (up_axis > 0.0 & side_axis < 0.0)
         {
             rotation = 135;
-        }
+        }*/
     }
 
     bool CheckGrounded()
@@ -92,6 +107,20 @@ public class Player_Script : MonoBehaviour
         else
         {
             return false;
+        }
+    }
+
+    /// Checks if player has fallen off platform
+    /// This method may be replaced with death plane collision
+    void CheckFallen()
+    {
+        if( transform.position.y < 0)
+        {
+            TakeDamage(25.0f);
+
+            /// Place player back on platform if alive
+            if (is_alive)
+                transform.position = start_position;
         }
     }
 
@@ -117,6 +146,17 @@ public class Player_Script : MonoBehaviour
             Rigidbody my_rbody = GetComponent<Rigidbody>();
             Vector3 jump_vec = Vector3.up * jump_impulse * Time.fixedDeltaTime;
             my_rbody.AddRelativeForce(jump_vec, ForceMode.Impulse);
+        }
+    }
+
+    void TakeDamage(float amt)
+    {
+        health -= amt;
+        if (health <= 0)
+        {
+            is_alive = false;
+            up_axis = 0.0f;
+            side_axis = 0.0f;
         }
     }
 
@@ -151,8 +191,55 @@ public class Player_Script : MonoBehaviour
         }
     }
 
+    void FireProjectile()
+    {
+        //Quaternion brot = transform.rotation * Quaternion.AngleAxis(180, Vector3.up);
+        //Instantiate(/*bullet prefab here*/, transform.position + new Vector3(-transform.up.x, 0, -transform.up.z) * 8, brot);
+    }
+
+    /// Clamps axis to 1 or -1 if not equal to 0
+    /// Allows for more-snappy movement/rotation
+    float ClampAxis(float axis)
+    {
+        if (axis > 0)
+            axis = 1;
+        else if (axis < 0)
+            axis = -1;
+        return axis;
+    }
+
+    // Update is called once per frame
+    void FixedUpdate() // This should be used for physics updates
+    {
+        if (is_alive)
+        {
+            is_grounded = CheckGrounded();
+            AdjustFriction();
+            Jumping();
+            Movement();
+            Swing();
+            if (Input.GetButtonDown("Projectile"))
+            {
+                Debug.Log("Fired projectile");
+                FireProjectile();
+            }
+        }
+    }
+
     void Update() //Any updates that need to bypass physics go here
     {
-        Rotation();
+        if (is_alive)
+        {
+            /// Fetch input and clamp it
+            up_axis = ClampAxis(Input.GetAxis("Vertical"));
+            side_axis = ClampAxis(Input.GetAxis("Horizontal"));
+
+            Rotation();
+            CheckFallen();
+        }
+
+        /// This can be added to another method as more UI functionality
+        /// is added
+        ui_hp_bar_inner.fillAmount = health * 0.01f;
     }
 }
