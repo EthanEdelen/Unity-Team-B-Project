@@ -15,4 +15,16 @@ public class Hitbox_Script : MonoBehaviour
     {
         
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            /// Debug message
+            print("Hit " + other.gameObject.name);
+
+            /// Uncomment when take_damage() is implemented vvv
+            //other.gameObject.GetComponent<EnemyScript>().take_damage();
+        }
+    }
 }
