@@ -60,7 +60,7 @@
     <Compile Include="Assets\Scripts\Attack_Script.cs" />
     <Compile Include="Assets\Scripts\Hitbox_Script.cs" />
     <Compile Include="Assets\Scripts\GM_Script.cs" />
-    <Compile Include="Assets\Turrent_Script.cs" />
+    <Compile Include="Assets\Scripts\Spit_Fish_Script.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

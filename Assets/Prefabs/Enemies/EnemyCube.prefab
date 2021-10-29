@@ -384,6 +384,8 @@ MonoBehaviour:
   immunityGain: 0
   meshRenderer: {fileID: 3752856720594306848}
   animator: {fileID: 3752856720594306854}
+  bulletObject: {fileID: 0}
+  firePort: {fileID: 0}
   audioSource: {fileID: 3752856720594306852}
   hurtClip: {fileID: 8300000, guid: b17671d569d164c4aa7342e8cac58137, type: 3}
   deathClip: {fileID: 8300000, guid: 304f0d7df91051641872e8c795277f02, type: 3}
