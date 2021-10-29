@@ -23,6 +23,8 @@ public class Character_Script : MonoBehaviour
     //Game object variables
     public MeshRenderer meshRenderer;
     public Animator animator;
+    public GameObject bulletObject;
+    public Transform firePort;
     //public Collider collider;  //Incorrect, there's already a gameObject.collider in monoBehavior
 
     //
@@ -103,5 +105,12 @@ public class Character_Script : MonoBehaviour
     public virtual void Movement()
     {
 
+    }
+
+    public virtual void Fire()
+    {
+        Debug.Log(gameObject + " Fired a projectile!");
+        GameObject bO = Instantiate(bulletObject);
+        bO.transform.SetPositionAndRotation(firePort.position, firePort.rotation);
     }
 }

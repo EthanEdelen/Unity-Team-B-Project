@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player_Script : MonoBehaviour
+public class Player_Script : Character_Script
 {
     protected bool is_alive = true;
     protected float health;
