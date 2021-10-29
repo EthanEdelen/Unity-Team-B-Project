@@ -20,10 +20,11 @@ public class Player_Script : MonoBehaviour
     private float side_axis = 0.0f;
 
     private bool is_grounded = true;
-    private bool is_swinging = false;
+    /*private bool is_swinging = false;
     private bool slash_held = false;
     private float swing_rotation = -90.0f;
-    private GameObject swordHitbox;
+    private GameObject swordHitbox;*/
+    public Animator swordAnimator;
 
     private Rigidbody my_rbody;
 
@@ -38,8 +39,8 @@ public class Player_Script : MonoBehaviour
 
         my_rbody = GetComponent<Rigidbody>();
 
-        swordHitbox = GameObject.Find("Sword Hitbox");
-        swordHitbox.SetActive(false);
+        /*swordHitbox = GameObject.Find("Sword Hitbox");
+        swordHitbox.SetActive(false);*/
     }
 
     void Movement()
@@ -162,8 +163,12 @@ public class Player_Script : MonoBehaviour
 
     void Swing()
     {
-        float swing_axis = Input.GetAxis("Slash");
-        if (is_swinging == false & swing_axis != 0.0f & slash_held == false)
+        bool swing_axis = Input.GetButtonDown("Slash");
+        if (swing_axis)
+        {
+            swordAnimator.SetTrigger("Swing");
+        }
+        /*if (is_swinging == false & swing_axis != 0.0f & slash_held == false)
         {
             swordHitbox.SetActive(true);
             swing_rotation = -90.0f;
@@ -188,7 +193,7 @@ public class Player_Script : MonoBehaviour
         if (swing_axis == 0.0f & slash_held == true)
         {
             slash_held = false;
-        }
+        }*/
     }
 
     void FireProjectile()
@@ -217,7 +222,6 @@ public class Player_Script : MonoBehaviour
             AdjustFriction();
             Jumping();
             Movement();
-            Swing();
             if (Input.GetButtonDown("Projectile"))
             {
                 Debug.Log("Fired projectile");
@@ -236,6 +240,7 @@ public class Player_Script : MonoBehaviour
 
             Rotation();
             CheckFallen();
+            Swing();
         }
 
         /// This can be added to another method as more UI functionality
