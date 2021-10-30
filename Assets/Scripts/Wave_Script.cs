@@ -30,16 +30,16 @@ public class Wave_Script : MonoBehaviour
         {
             // pick an enemy whose score can fit the wave and is 
 
-            while (difficulty_remaining > 0)
-            {
-                int list_size = enemy_list.Count;
-                int list_value = Random.Range(0, list_size - 1);
-                enemy_object = Instantiate(enemy_list[list_value], transform.position, Quaternion.identity);
-                //int enemy_difficulty = enemy_object.GetComponent<Enemy_Script>();
-                //difficulty_remaining -= enemy_difficulty;
-            }
-            enemy_list.Clear();
-            create_list();
+            //while (difficulty_remaining > 0)
+            //{
+            //    //int list_size = enemy_list.Count;
+            //    //int list_value = Random.Range(0, list_size - 1);
+            //    //enemy_object = Instantiate(enemy_list[list_value], transform.position, Quaternion.identity);
+            //    //int enemy_difficulty = enemy_object.GetComponent<Enemy_Script>();
+            //    //difficulty_remaining -= enemy_difficulty;
+            //}
+            //enemy_list.Clear();
+            //create_list();
             wave_completed = false;
         }
     }
