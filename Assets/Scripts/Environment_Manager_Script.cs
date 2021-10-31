@@ -65,6 +65,8 @@ public class Environment_Manager_Script : MonoBehaviour
 
     public GameObject basicPlatform;
 
+    GameObject spawner;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -76,16 +78,17 @@ public class Environment_Manager_Script : MonoBehaviour
         environmentList = new List<EnvironmentSpawnInfo>();
         environmentList.Add(new EnvironmentSpawnInfo(EnvironmentTypes.Basic, new Vector3(-13, -2, -17), new Vector3(-13, 6, -17), new Vector3(-13, -2, -17), false, 0.0f, 0.0f));
         possibleLayouts.Add(new LayoutInfo(environmentList));
+        spawner = GameObject.FindWithTag("Respawn");
     }
 
     void Idling()
     {
-        stateTimer -= Time.deltaTime;
-        if (stateTimer < 0.0f)
-        {
-            stateTimer = 5.0f;
+        //stateTimer -= Time.deltaTime;
+        //if (stateTimer < 0.0f)
+        //{
+            //stateTimer = 5.0f;
             currentState = ManagerState.Layout_Selection;
-        }
+        //}
     }
 
     void Layout_Selection()
@@ -159,20 +162,34 @@ public class Environment_Manager_Script : MonoBehaviour
     {
         lastWaveSelector = waveSelector;
         firstTime = true;
-        stateTimer -= Time.deltaTime;
-        if (stateTimer < 0.0f)
+        //stateTimer -= Time.deltaTime;
+        //if (stateTimer < 0.0f) //Change this instead to where all of the enemies are spawned
+        //{
+        //    stateTimer = 5.0f;
+        //    currentState = ManagerState.Wave_In_Progress;
+        //}
+
+        //print(spawner.GetComponent<Wave_Script>().enemies_spawned);
+        if (spawner!= null)
         {
-            stateTimer = 5.0f;
-            currentState = ManagerState.Wave_In_Progress;
+            if(spawner.GetComponent<Wave_Script>().enemies_spawned)
+                currentState = ManagerState.Wave_In_Progress;
         }
     }
 
     void Wave_In_Progress()
     {
-        stateTimer -= Time.deltaTime;
-        if (stateTimer < 0.0f)
+        //stateTimer -= Time.deltaTime;
+        //if (stateTimer < 0.0f) // Change this instead to where all of the enemies are killed
+        //{
+        //    stateTimer = 5.0f;
+        //    currentState = ManagerState.Wave_Complete;
+        //}
+
+        //print(spawner.GetComponent<Wave_Script>().wave_completed);
+
+        if (spawner.GetComponent<Wave_Script>().wave_completed)
         {
-            stateTimer = 5.0f;
             currentState = ManagerState.Wave_Complete;
         }
     }
@@ -180,8 +197,10 @@ public class Environment_Manager_Script : MonoBehaviour
     void Wave_Complete()
     {
         stateTimer -= Time.deltaTime;
+        print(stateTimer);
         if (stateTimer < 0.0f)
         {
+            spawner.GetComponent<Wave_Script>().SetReady(true);
             stateTimer = 5.0f;
             currentState = ManagerState.Layout_Selection;
         }

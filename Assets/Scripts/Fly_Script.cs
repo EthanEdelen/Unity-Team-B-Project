@@ -18,8 +18,9 @@ public class Fly_Script : Enemy_Script
 
     private void FixedUpdate()
     {
-        Movement();
+        FlyMovement();
         Rotation();
-        //Fix_Rotation();
+        Fix_Rotation();
+        CheckLife();
     }
 }

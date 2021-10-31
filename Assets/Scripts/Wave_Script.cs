@@ -4,50 +4,77 @@ using UnityEngine;
 
 public class Wave_Script : MonoBehaviour
 {
-    public int wave = 1;
-    public int total_difficulty = 1;
-    int difficulty_remaining = 1;
     public Transform SpawnPosition;
     public GameObject enemy_object;
     List<GameObject> enemy_list = new List<GameObject>();
+    public int current_wave = 0;
 
-    bool wave_completed = true;
+    public bool wave_completed = true;
+    public bool enemies_spawned = false;
     public GameObject slime_prefab;
     public GameObject fly_prefab;
     public GameObject alligator_prefab;
+
+    public bool ready = true;
     // Start is called before the first frame update
     void Start()
     {
-        //Slime_Script slime_script = slime_prefab.GetComponent<Slime_Script>();
-        create_list();
+
     }
 
     // Update is called once per frame
     void Update()
     {
         //Bullet bullet = bullet_object.GetComponent<Bullet>();
-        if(wave_completed)
+        if (wave_completed && ready)
         {
-            // pick an enemy whose score can fit the wave and is 
-
-            //while (difficulty_remaining > 0)
-            //{
-            //    //int list_size = enemy_list.Count;
-            //    //int list_value = Random.Range(0, list_size - 1);
-            //    //enemy_object = Instantiate(enemy_list[list_value], transform.position, Quaternion.identity);
-            //    //int enemy_difficulty = enemy_object.GetComponent<Enemy_Script>();
-            //    //difficulty_remaining -= enemy_difficulty;
-            //}
-            //enemy_list.Clear();
-            //create_list();
+            current_wave++;
+            create_list(current_wave);
+            for (int i = 0; i < enemy_list.Count; i++)
+            {
+                enemy_object = Instantiate(enemy_list[i], new Vector3 (transform.position.x + Random.Range(-3, 3), transform.position.y + Random.Range(0, 30), transform.position.z + Random.Range(-12, 12)), Quaternion.identity);
+            }
+            enemy_list.Clear();
             wave_completed = false;
+            enemies_spawned = true;
+            ready = false;
+        }
+
+        GameObject[] gameObjects;
+        gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
+
+        if (gameObjects.Length == 0)
+        {
+            wave_completed = true;
+            enemies_spawned = false;
         }
     }
 
-    void create_list()
+    public void SetReady(bool isReady)
     {
-        enemy_list.Add(alligator_prefab);
-        enemy_list.Add(fly_prefab);
-        enemy_list.Add(slime_prefab);
+        ready = true;
+    }
+
+    void create_list(int wave)
+    {
+        switch(wave)
+        {
+            case 1:
+                enemy_list.Add(alligator_prefab);
+                //enemy_list.Add(fly_prefab);
+                enemy_list.Add(slime_prefab);
+                break;
+            case 2:
+                enemy_list.Add(alligator_prefab);
+                enemy_list.Add(alligator_prefab);
+                enemy_list.Add(alligator_prefab);
+                //enemy_list.Add(fly_prefab);
+                enemy_list.Add(slime_prefab);
+                break;
+            default:
+                enemy_list.Add(alligator_prefab);
+                print("invalid wave #");
+                break;
+        }
     }
 }

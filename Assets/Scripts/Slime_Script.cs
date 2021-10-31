@@ -24,5 +24,6 @@ public class Slime_Script : Enemy_Script
         Rotation();
         Fix_Rotation();
         Jumping();
+        CheckLife();
     }
 }

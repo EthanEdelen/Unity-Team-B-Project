@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 2779550469234520542}
   m_Layer: 0
   m_Name: Alligator
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -228,3 +228,4 @@ MonoBehaviour:
   is_grounded: 1
   jump_timer: 0
   jump_time_elapsed: 0
+  difficulty_value: 1

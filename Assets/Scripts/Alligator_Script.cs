@@ -21,8 +21,10 @@ public class Alligator_Script : Enemy_Script
     private void FixedUpdate()
     {
         Movement();
+        //FlyMovement();
         Rotation();
         Fix_Rotation();
+        CheckLife();
     }
 
     //void Movement()

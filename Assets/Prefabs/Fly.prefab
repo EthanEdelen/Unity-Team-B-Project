@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 1668646904378332128}
   m_Layer: 0
   m_Name: Fly
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -206,13 +206,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d939362667767084d9faefbe41151eae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  move_speed: 2
+  move_speed: 150
   jump_impulse: 10000
   rotation: 0
   rotate_speed: 100
   is_grounded: 1
   jump_timer: 1
   jump_time_elapsed: 0
+  difficulty_value: 1
 --- !u!54 &1668646904378332128
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3256349542354580764}
   m_Layer: 0
   m_Name: Slime
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,6 +116,7 @@ MonoBehaviour:
   is_grounded: 1
   jump_timer: 1
   jump_time_elapsed: 0
+  difficulty_value: 1
 --- !u!54 &3256349542354580764
 Rigidbody:
   m_ObjectHideFlags: 0

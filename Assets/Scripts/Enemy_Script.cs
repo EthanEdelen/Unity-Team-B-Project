@@ -29,13 +29,28 @@ public class Enemy_Script : MonoBehaviour
        
     }
 
+    public void CheckLife()
+    {
+        if(transform.position.y <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
     public void Movement()
     {
         Rigidbody my_rbody;
         my_rbody = GetComponent<Rigidbody>();
         Vector3 move_vec = Vector3.forward * move_speed * Time.fixedDeltaTime;
         my_rbody.AddRelativeForce(move_vec, ForceMode.Impulse);
-        //my_rbody.velocity = move_vec;
+    }
+
+    public void FlyMovement()
+    {
+        Rigidbody my_rbody;
+        my_rbody = GetComponent<Rigidbody>();
+        Vector3 move_vec = transform.forward * move_speed * Time.fixedDeltaTime;
+        my_rbody.velocity = move_vec;
     }
 
     public void Rotation()
