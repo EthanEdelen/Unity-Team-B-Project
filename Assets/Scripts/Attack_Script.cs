@@ -6,7 +6,7 @@ public class Attack_Script : MonoBehaviour
 {
 
     public GameObject owner; //The unit that fired this projectile.
-    public int damage;
+    public float damage;
     public float lifeTime;
     public AudioSource audioSource;
     public AudioClip firedClip;

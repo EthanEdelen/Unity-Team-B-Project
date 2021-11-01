@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class Hitbox_Script : MonoBehaviour
 {
+    public Player_Script owner;
     public float timer = 5.0f;
 
-    // used to find middle of spwaner box
-    private static Vector3 RandomPointInBox(Vector3 center, Vector3 size)
-    {
+    // used to find middle of spwaner box  - Is this supposed to be here?
+    //private static Vector3 RandomPointInBox(Vector3 center, Vector3 size)
+    //{
 
-        return center + new Vector3(
-           (Random.value - 0.5f) * size.x,
-           (Random.value - 0.5f) * size.y,
-           (Random.value - 0.5f) * size.z
-        );
-    }
+    //    return center + new Vector3(
+    //       (Random.value - 0.5f) * size.x,
+    //       (Random.value - 0.5f) * size.y,
+    //       (Random.value - 0.5f) * size.z
+    //    );
+    //}
     // Start is called before the first frame update
     void Start()
     {
@@ -35,8 +36,8 @@ public class Hitbox_Script : MonoBehaviour
             /// Debug message
             print("Hit " + other.gameObject.name);
 
-            /// Uncomment when take_damage() is implemented vvv
-            //other.gameObject.GetComponent<EnemyScript>().take_damage();
+            /// Uncomment when take_damage() is implemented vvv !! GetGit(int damage) in char script
+            other.gameObject.GetComponent<Character_Script>().GetHit(owner.GetDamage());
         }
     }
 

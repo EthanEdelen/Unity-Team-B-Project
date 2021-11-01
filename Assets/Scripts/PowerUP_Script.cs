@@ -26,7 +26,8 @@ public class PowerUP_Script : CollectableSuper
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(myPowerUPType);
+        //Taking out for temporary debugging
+        //Debug.Log(myPowerUPType);
     }
 
     //chooses the powerup type, mostly for a seeder or manager

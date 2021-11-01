@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Player_Script : MonoBehaviour
 {
     protected bool is_alive = true;
-    protected float health;
+    protected float current_health;
     protected float max_health = 100.0f;
     public Image ui_hp_bar_inner;
 
@@ -34,7 +34,7 @@ public class Player_Script : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        health = max_health;
+        current_health = max_health;
         ui_hp_bar_inner.fillAmount = 1.0f;
 
         start_position = transform.position;
@@ -154,8 +154,8 @@ public class Player_Script : MonoBehaviour
 
     void TakeDamage(float amt)
     {
-        health -= amt;
-        if (health <= 0)
+        current_health -= amt;
+        if (current_health <= 0)
         {
             is_alive = false;
             up_axis = 0.0f;
@@ -308,6 +308,6 @@ public class Player_Script : MonoBehaviour
 
         /// This can be added to another method as more UI functionality
         /// is added
-        ui_hp_bar_inner.fillAmount = health * 0.01f;
+        ui_hp_bar_inner.fillAmount = current_health * 0.01f;
     }
 }

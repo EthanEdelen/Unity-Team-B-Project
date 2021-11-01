@@ -8,9 +8,9 @@ public class Character_Script : MonoBehaviour
 {
     //Note, I tend to code in camel casing, hope that's allright.
     //Game Stats Variables
-    public int hp;
-    public int maxHp;
-    public int atk;  //Used in damage calculations this character is responsible for.
+    public float hp;
+    public float maxHp;
+    public float atk;  //Used in damage calculations this character is responsible for.
     public float fireRate;
     public int score; //How many points this character is worth or has accumalated.
     public bool alv;
@@ -67,7 +67,7 @@ public class Character_Script : MonoBehaviour
 
     public virtual void UpdateUI()
     {
-        hpSlider.value = (float)hp / (float)maxHp; //Returns a 0 - 1 value to map to the slider.
+        hpSlider.value = hp / maxHp; //Returns a 0 - 1 value to map to the slider.
     }
     public virtual void UpdateTimers(float dt)
     {
@@ -77,10 +77,10 @@ public class Character_Script : MonoBehaviour
             immunityFrames -= dt;
     }
     //This function isn't the same as a set hp, we need to set I frames and play audio, plausibly a visual indicator too.
-    public virtual void GetHit(int damage)
+    public virtual void GetHit(float damage)
     {
         //Talk shit, get hit.
-        if (immunityFrames > 0)
+        if (immunityFrames <= 0)
         {
             hp -= damage;
             audioSource.PlayOneShot(hurtClip);
