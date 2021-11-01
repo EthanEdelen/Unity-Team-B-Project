@@ -10,6 +10,8 @@ public class Player_Script : MonoBehaviour
     protected float max_health = 100.0f;
     public Image ui_hp_bar_inner;
 
+    private float attack_timer = .5f;
+    public float Damage = 10.0f;
     public float move_speed = 8000.0f;
     public float jump_impulse = 1000000.0f;
     public float rotation = 0.0f;
@@ -228,6 +230,67 @@ public class Player_Script : MonoBehaviour
                 FireProjectile();
             }
         }
+    }
+
+    //Getters and Setters for testing purposes from here down
+    public float GetCurrentHealth()
+    {
+        return current_health;
+    }
+
+    public float GetMaxHealth()
+    {
+        return max_health;
+    }
+
+    public void SetCurrentHealth(float newHealth)
+    {
+        current_health += newHealth;
+    }
+
+    public void SetMaxHealth(float newMaxHealth)
+    {
+        max_health += newMaxHealth;
+    }
+
+    public void SetDamage(float newDamage)
+    {
+        Damage = newDamage;
+    }
+
+    public float GetDamage()
+    {
+        return Damage;
+    }
+    
+    public void SetAttackTimer(float newTimer)
+    {
+        attack_timer = newTimer;
+    }
+
+    public float GetAttackTimer()
+    {
+        return attack_timer;
+    }
+
+    public void SetMoveSpeed(float newMoveSpeed)
+    {
+        move_speed = newMoveSpeed;
+    }
+
+    public float GetMoveSpeed()
+    {
+        return move_speed;
+    }
+
+    public float GetJumpImpulse()
+    {
+        return jump_impulse;
+    }
+
+    public void SetJumpImpulse(float newJumpImpulse)
+    {
+        jump_impulse = newJumpImpulse;
     }
 
     void Update() //Any updates that need to bypass physics go here
