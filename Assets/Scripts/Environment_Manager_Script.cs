@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.IO;
 
 public class Environment_Manager_Script : MonoBehaviour
 {
@@ -19,54 +18,191 @@ public class Environment_Manager_Script : MonoBehaviour
     ManagerState currentState = ManagerState.Idling;
     float stateTimer = 5.0f;
 
-    enum EnvironmentTypes
+    public enum EnvironmentTypes // This may be expanded later
     {
-        Static //The basic, default platform. There should be an object class for each of these.
+        Basic // The basic, default platform. There should be an object class for each of these.
     }
-    struct EnvironmentSpawnInfo
+    public struct EnvironmentSpawnInfo // This may be expanded later
     {
-        public Vector3 InitalSpawn;  //Where the setpiece spawns at first, before it moves to its wave location. (This spawn is usually offscreen.)
-        public Vector3 WaveLocation; //The location the setpiece occupies during the wave.
-        public Vector3 DespawnSpot;  //The location the setpiece moves to so it can despawn once the wave is over. (Usually the same as the inital spawn.)
-        float SpawnTime;             //When during Layout_Construction the setpiece spawns, given its layout is being constructed.
-        float DespawnTime;           //When during Layout_Construction the setpiece begins the process of despawning, if it is part of an old wave.
-        public EnvironmentSpawnInfo(Vector3 initalSpawn, Vector3 waveLocation, Vector3 despawnSpot, float spawnTime, float despawnTime)
+        public EnvironmentTypes Type;         // The type of platform, used to instantiate the object.
+        public Vector3 InitalSpawn;    // Where the setpiece spawns at first, before it moves to its wave location. (This spawn is usually offscreen.)
+        public Vector3 WaveLocation;   // The location the setpiece occupies during the wave.
+        public Vector3 DespawnSpot;    // The location the setpiece moves to so it can despawn once the wave is over. (Usually the same as the inital spawn.) 
+        public bool Unbounded;         // Sets if the setpiece spawns in an unusual way.
+        public float ConstructDelay;   // The delay, in seconds, that the setpiece takes before it spawns.
+        public float DeconstructDelay; // The delay, in seconds, that the setpiece takes before it begins despawning.
+        
+        public EnvironmentSpawnInfo(EnvironmentTypes type, Vector3 initalSpawn, Vector3 waveLocation, Vector3 despawnSpot, bool unbounded, float constructDelay, float deconstructDelay)
         {
+            this.Type = type;
             this.InitalSpawn = initalSpawn;
             this.WaveLocation = waveLocation;
             this.DespawnSpot = despawnSpot;
-            this.SpawnTime = spawnTime;
-            this.DespawnTime = despawnTime;
+            this.Unbounded = unbounded;
+            this.ConstructDelay = constructDelay;
+            this.DeconstructDelay = deconstructDelay;
         }
     }
-    struct LayoutInfo
+    public struct LayoutInfo // This may be expanded later
     {
-        public EnvironmentSpawnInfo[] EnvironmentList; //A list of all the setpiece information needed for construction.
-        float LayoutConstructionTime;                  //How long it takes for this layout to construct itself.
-        float LayoutDestructionTime;                   //How long it takes for this layout to deconstruct itself.
-        public LayoutInfo(EnvironmentSpawnInfo[] environmentList, float layoutConstructionTime, float layoutDestructionTime)
+        public List<EnvironmentSpawnInfo> EnvironmentList; //A list of all the setpiece information needed for construction.
+        public LayoutInfo(List<EnvironmentSpawnInfo> environmentList)
         {
             this.EnvironmentList = environmentList;
-            this.LayoutConstructionTime = layoutConstructionTime;
-            this.LayoutDestructionTime = layoutDestructionTime;
         }
     }
 
-    LayoutInfo[] possibleLayouts;
+    public List<LayoutInfo> possibleLayouts;
+    public List<EnvironmentSpawnInfo> environmentList;
+    public LayoutInfo currentLayout;
+
+    public int waveSelector = 0;
+    public int lastWaveSelector = -1;
+
+    public List<GameObject> setpieces;
+
+    public bool firstTime = true;
+
+    public GameObject basicPlatform;
+
+    GameObject spawner;
 
     // Start is called before the first frame update
     void Start()
     {
-        //TODO: Add all the layouts as appends here.
+        setpieces = new List<GameObject>();
+        possibleLayouts = new List<LayoutInfo>();
+        environmentList = new List<EnvironmentSpawnInfo>();
+        environmentList.Add(new EnvironmentSpawnInfo(EnvironmentTypes.Basic, new Vector3(-13, -2, 22), new Vector3(-13, 6, 22), new Vector3(-13, -2, 22), false, 0.0f, 0.0f)); 
+        possibleLayouts.Add(new LayoutInfo(environmentList));
+        environmentList = new List<EnvironmentSpawnInfo>();
+        environmentList.Add(new EnvironmentSpawnInfo(EnvironmentTypes.Basic, new Vector3(-13, -2, -17), new Vector3(-13, 6, -17), new Vector3(-13, -2, -17), false, 0.0f, 0.0f));
+        possibleLayouts.Add(new LayoutInfo(environmentList));
+        spawner = GameObject.FindWithTag("Respawn");
     }
 
     void Idling()
     {
+        //stateTimer -= Time.deltaTime;
+        //if (stateTimer < 0.0f)
+        //{
+            //stateTimer = 5.0f;
+            currentState = ManagerState.Layout_Selection;
+        //}
+    }
+
+    void Layout_Selection()
+    {
+        waveSelector = Random.Range(0, 2);
+        currentLayout = possibleLayouts[waveSelector];
+        currentState = ManagerState.Augmentation;
+        return;
+    }
+
+    void Augmentation()
+    {
+        currentState = ManagerState.Layout_Construction;
+        return;
+    }
+
+    void Layout_Construction()
+    {
+        if (waveSelector == lastWaveSelector)
+        {
+            currentState = ManagerState.Enemy_Spawntime;
+            return;
+        }
+        if (firstTime)
+        {
+            int i = 0;
+            if (lastWaveSelector >= 0)
+            {
+                for (; i < setpieces.Count; i++)
+                {
+                    setpieces[i].GetComponent<Environment_Script>().CurrentLayout = false;
+                }
+            }
+            for (int j = 0; j < currentLayout.EnvironmentList.Count;j++)
+            {
+                if (currentLayout.EnvironmentList[j].Type == EnvironmentTypes.Basic)
+                {
+                    setpieces.Add(Instantiate(basicPlatform, currentLayout.EnvironmentList[j].InitalSpawn, transform.rotation * Quaternion.AngleAxis(-90, Vector3.right)));
+                    setpieces[i].GetComponent<Environment_Script>().InfoHandoff(currentLayout.EnvironmentList[j].WaveLocation, currentLayout.EnvironmentList[j].DespawnSpot, currentLayout.EnvironmentList[j].Unbounded);
+                    i++;
+                }
+            }
+        }
+        bool notFinished = false;
+        for (int k = 0; k < setpieces.Count; k++)
+        {
+            if (!setpieces[k].GetComponent<Environment_Script>().Unbounded & !setpieces[k].GetComponent<Environment_Script>().ReachedWaveLocation & setpieces[k].GetComponent<Environment_Script>().CurrentLayout & setpieces[k].GetComponent<Environment_Script>().Education)
+            {
+                notFinished = true;
+            }
+            else if (!setpieces[k].GetComponent<Environment_Script>().Unbounded & !setpieces[k].GetComponent<Environment_Script>().ReachedDespawnLocation & !setpieces[k].GetComponent<Environment_Script>().CurrentLayout & setpieces[k].GetComponent<Environment_Script>().Education)
+            {
+                notFinished = true;
+            }
+            else if (!setpieces[k].GetComponent<Environment_Script>().Unbounded & setpieces[k].GetComponent<Environment_Script>().ReachedDespawnLocation & !setpieces[k].GetComponent<Environment_Script>().CurrentLayout & setpieces[k].GetComponent<Environment_Script>().Education)
+            {
+                Destroy(setpieces[k]);
+                setpieces.RemoveAt(k);
+                k--;
+            }
+        }
+        if (notFinished == false)
+        {
+            currentState = ManagerState.Enemy_Spawntime;
+            return;
+        }
+        firstTime = false;
+    }
+
+    void Enemy_Spawntime()
+    {
+        lastWaveSelector = waveSelector;
+        firstTime = true;
+        //stateTimer -= Time.deltaTime;
+        //if (stateTimer < 0.0f) //Change this instead to where all of the enemies are spawned
+        //{
+        //    stateTimer = 5.0f;
+        //    currentState = ManagerState.Wave_In_Progress;
+        //}
+
+        //print(spawner.GetComponent<Wave_Script>().enemies_spawned);
+        if (spawner!= null)
+        {
+            if(spawner.GetComponent<Wave_Script>().enemies_spawned)
+                currentState = ManagerState.Wave_In_Progress;
+        }
+    }
+
+    void Wave_In_Progress()
+    {
+        //stateTimer -= Time.deltaTime;
+        //if (stateTimer < 0.0f) // Change this instead to where all of the enemies are killed
+        //{
+        //    stateTimer = 5.0f;
+        //    currentState = ManagerState.Wave_Complete;
+        //}
+
+        //print(spawner.GetComponent<Wave_Script>().wave_completed);
+
+        if (spawner.GetComponent<Wave_Script>().wave_completed)
+        {
+            currentState = ManagerState.Wave_Complete;
+        }
+    }
+
+    void Wave_Complete()
+    {
         stateTimer -= Time.deltaTime;
+        print(stateTimer);
         if (stateTimer < 0.0f)
         {
+            spawner.GetComponent<Wave_Script>().SetReady(true);
             stateTimer = 5.0f;
-            currentState = ManagerState.Idling;
+            currentState = ManagerState.Layout_Selection;
         }
     }
 
@@ -79,7 +215,22 @@ public class Environment_Manager_Script : MonoBehaviour
                 Idling();
                 break;
             case ManagerState.Layout_Selection:
-                Idling();
+                Layout_Selection();
+                break;
+            case ManagerState.Augmentation:
+                Augmentation();
+                break;
+            case ManagerState.Layout_Construction:
+                Layout_Construction();
+                break;
+            case ManagerState.Enemy_Spawntime:
+                Enemy_Spawntime();
+                break;
+            case ManagerState.Wave_In_Progress:
+                Wave_In_Progress();
+                break;
+            case ManagerState.Wave_Complete:
+                Wave_Complete();
                 break;
             default:
                 currentState = ManagerState.Idling;
