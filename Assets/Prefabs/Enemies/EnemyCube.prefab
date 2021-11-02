@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 3752856720594306854}
   m_Layer: 0
   m_Name: EnemyCube
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -373,26 +373,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a7c57427cb50b44b32de05114ec1d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 3
-  maxHp: 3
-  atk: 1
-  fireRate: 1
-  score: 5
-  alv: 1
+  hp: 0
+  maxHp: 0
+  atk: 0
+  fireRate: 0
+  score: 0
+  alv: 0
+  move_speed: 10
+  jump_impulse: 10000
+  rotation: 0
+  rotate_speed: 100
+  is_grounded: 1
   lastFired: 0
   immunityFrames: 0
   immunityGain: 0
-  meshRenderer: {fileID: 3752856720594306848}
-  animator: {fileID: 3752856720594306854}
+  meshRenderer: {fileID: 0}
+  animator: {fileID: 0}
   bulletObject: {fileID: 0}
+  attackObject: {fileID: 0}
   firePort: {fileID: 0}
-  audioSource: {fileID: 3752856720594306852}
-  hurtClip: {fileID: 8300000, guid: b17671d569d164c4aa7342e8cac58137, type: 3}
-  deathClip: {fileID: 8300000, guid: 304f0d7df91051641872e8c795277f02, type: 3}
-  spawnClip: {fileID: 8300000, guid: 2507674cae4b1a74695f002b99b16167, type: 3}
+  audioSource: {fileID: 0}
+  hurtClip: {fileID: 0}
+  deathClip: {fileID: 0}
+  spawnClip: {fileID: 0}
   healthText: {fileID: 0}
-  hpSlider: {fileID: 3752856719370127825}
+  hpSlider: {fileID: 0}
   moveAxis: {x: 0, y: 0}
+  jump_timer: 1
+  jump_time_elapsed: 0
+  difficulty_value: 1
 --- !u!54 &3752856720594306853
 Rigidbody:
   m_ObjectHideFlags: 0

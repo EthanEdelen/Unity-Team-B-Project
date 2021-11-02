@@ -44,22 +44,22 @@ public class Debuff_Script : CollectableSuper
         {
             case DebuffType.FATIGUE:
                 {
-                    script.SetAttackTimer(script.GetAttackTimer()*2);
+                    script.SetAtk(script.GetAtk()*2);
                     break;
                 }
             case DebuffType.WEAKNESS:
                 {
-                    script.SetDamage(script.GetDamage() / 3);
+                    script.SetAtk(script.GetAtk() / 3);
                     break;
                 }
             case DebuffType.PLAGUE:
                 {
                     if (script.GetMaxHealth()<= 2)
                     {
-                        script.SetMaxHealth(1.0f);
+                        script.SetMaxHealth(2f);
                     }
                     else
-                        script.SetMaxHealth(script.GetMaxHealth() - 2);
+                        script.AddMaxHealth(script.GetMaxHealth() - 2);
                     break;
                 }
             case DebuffType.SLOW:

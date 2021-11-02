@@ -10,6 +10,7 @@ public class Collectable_Manager : MonoBehaviour
     public Debuff_Script Debuff;
     public CollectableSuper Super;
     public GameObject Collectable_Prefab;
+    //Hides Component renderer?
     private Renderer renderer;
     
     // used to find a spawn point inside the SpawnerBox
@@ -37,6 +38,8 @@ public class Collectable_Manager : MonoBehaviour
     {
         if (SpawnTimer <= 0)
         {
+            //Calling spawn type for rng
+            //EffectSeeder(2);
             Spawning();
             SpawnTimer = 5;
         }

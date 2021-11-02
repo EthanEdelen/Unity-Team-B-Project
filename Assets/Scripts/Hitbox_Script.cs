@@ -37,7 +37,7 @@ public class Hitbox_Script : MonoBehaviour
             print("Hit " + other.gameObject.name);
 
             /// Uncomment when take_damage() is implemented vvv !! GetGit(int damage) in char script
-            other.gameObject.GetComponent<Character_Script>().GetHit(owner.GetDamage());
+            other.gameObject.GetComponent<Character_Script>().GetHit(owner.GetAtk());
         }
     }
 

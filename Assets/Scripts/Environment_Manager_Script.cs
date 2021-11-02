@@ -93,7 +93,9 @@ public class Environment_Manager_Script : MonoBehaviour
 
     void Layout_Selection()
     {
+        
         waveSelector = Random.Range(0, 2);
+        Debug.Log("Layout selection . . .");
         currentLayout = possibleLayouts[waveSelector];
         currentState = ManagerState.Augmentation;
         return;
@@ -107,6 +109,7 @@ public class Environment_Manager_Script : MonoBehaviour
 
     void Layout_Construction()
     {
+        Debug.Log("Layout Constructor . . .");
         if (waveSelector == lastWaveSelector)
         {
             currentState = ManagerState.Enemy_Spawntime;
@@ -160,6 +163,7 @@ public class Environment_Manager_Script : MonoBehaviour
 
     void Enemy_Spawntime()
     {
+        Debug.Log("Enemy spawntime . . .");
         lastWaveSelector = waveSelector;
         firstTime = true;
         //stateTimer -= Time.deltaTime;
@@ -179,6 +183,7 @@ public class Environment_Manager_Script : MonoBehaviour
 
     void Wave_In_Progress()
     {
+        Debug.Log("Wave in progress . . .");
         //stateTimer -= Time.deltaTime;
         //if (stateTimer < 0.0f) // Change this instead to where all of the enemies are killed
         //{
@@ -196,6 +201,7 @@ public class Environment_Manager_Script : MonoBehaviour
 
     void Wave_Complete()
     {
+        Debug.Log("Wave complete . . .");
         stateTimer -= Time.deltaTime;
         print(stateTimer);
         if (stateTimer < 0.0f)

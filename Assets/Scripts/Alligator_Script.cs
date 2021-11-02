@@ -5,27 +5,28 @@ using UnityEngine;
 public class Alligator_Script : Enemy_Script
 {
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
-        move_speed = 8.0f;
-        rotation = 0.0f;
-        rotate_speed = 100.0f;
+        base.Start();
+        //Set in Prefab?
+        //move_speed = 8.0f;
+        //rotation = 0.0f;
+        //rotate_speed = 100.0f;
     }
 
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
-      
+        base.Update();
     }
 
-    private void FixedUpdate()
+    public override void FixedUpdate()
     {
-        Movement();
-        //FlyMovement();
-        Rotation();
-        Fix_Rotation();
-        CheckLife();
+        base.FixedUpdate();
+        
     }
+
+    
 
     //void Movement()
     //{

@@ -44,25 +44,29 @@ public class PowerUP_Script : CollectableSuper
         {
             case PowerUPType.HEALTH:
                 {
-                    if (script.GetCurrentHealth() == script.GetMaxHealth())
-                        script.SetCurrentHealth(script.GetMaxHealth());
-                    else
-                        script.SetCurrentHealth(script.GetCurrentHealth() + 1);
+                    //This will heal the player by an amount equal to their current health
+                    //if (script.GetCurrentHealth() == script.GetMaxHealth())
+                    //    script.SetCurrentHealth(script.GetMaxHealth());
+                    //else
+                    //    script.SetCurrentHealth(script.GetCurrentHealth() + 1);\
+
+                    //This will porportionatley heal the character and truncate inside Heal()
+                    script.Heal(script.GetMaxHealth() / 4);
                     break;
                 }
             case PowerUPType.DAMAGE:
                 {
-                    script.SetDamage(script.GetDamage() * 2);
+                    script.SetAtk(script.GetAtk() * 2);
                     break;
                 }
             case PowerUPType.ATTACKSPEED:
                 {
-                    script.SetAttackTimer(script.GetAttackTimer() / 2);
+                    script.SetFireRate(script.GetFireRate() / 2);
                     break;
                 }
             case PowerUPType.BONUSHEALTH:
                 {
-                    script.SetMaxHealth(script.GetMaxHealth() + (script.GetMaxHealth() / 2));
+                    script.AddMaxHealth(script.GetMaxHealth() + (script.GetMaxHealth() / 2));
                     break;
                 }
             case PowerUPType.RUSH:

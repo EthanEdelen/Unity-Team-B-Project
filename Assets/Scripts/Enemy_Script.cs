@@ -2,31 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_Script : MonoBehaviour
+public class Enemy_Script : Character_Script
 {
-    public float move_speed = 10.0f;
-    public float jump_impulse = 10000.0f;
-    public float rotation = 0.0f;
-    public float rotate_speed = 100.0f;
-    public bool is_grounded = true;
+    //Jump cooldown?
     public float jump_timer = 1.0f;
     public float jump_time_elapsed = 0.0f;
     public int difficulty_value = 1;
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
-
+        base.Start();
     }
 
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
-
+        base.Update();
     }
 
-    private void FixedUpdate()
+    public override void FixedUpdate()
     {
-       
+        base.FixedUpdate();
+        AdjustFriction();
+        Rotation();
+        Fix_Rotation();
+        Movement();
+        CheckLife();
     }
 
     public void CheckLife()
@@ -37,12 +38,15 @@ public class Enemy_Script : MonoBehaviour
         }
     }
 
-    public void Movement()
+    public override void Movement()
     {
-        Rigidbody my_rbody;
-        my_rbody = GetComponent<Rigidbody>();
-        Vector3 move_vec = Vector3.forward * move_speed * Time.fixedDeltaTime;
-        my_rbody.AddRelativeForce(move_vec, ForceMode.Impulse);
+        if (!lockMovement)
+        {
+            Rigidbody my_rbody;
+            my_rbody = GetComponent<Rigidbody>();
+            Vector3 move_vec = Vector3.forward * move_speed * Time.fixedDeltaTime;
+            my_rbody.AddRelativeForce(move_vec, ForceMode.Impulse);
+        }
     }
 
     public void FlyMovement()
@@ -55,7 +59,11 @@ public class Enemy_Script : MonoBehaviour
 
     public void Rotation()
     {
-        GameObject player_object = GameObject.FindGameObjectWithTag("Player");
+        
+
+        //GameObject player_object = GameObject.FindGameObjectWithTag("Player");
+        //Doesn't have to look through scene, communicates with the Game manager
+        GameObject player_object = GM_Script.GM.playerObject;
         if (player_object != null)
         {
             Player_Script player = player_object.GetComponent<Player_Script>();
@@ -75,8 +83,8 @@ public class Enemy_Script : MonoBehaviour
                 transform.rotation = Quaternion.LookRotation(newDirection, Vector3.up);
             }
         }
+        
     }
-
     public void Fix_Rotation()
     {
         if (this.transform.eulerAngles.y >= 315)
@@ -128,34 +136,21 @@ public class Enemy_Script : MonoBehaviour
         }
     }
 
-    public bool CheckGrounded()
-    {
-        if (Physics.Raycast(transform.position, -Vector3.up, this.GetComponent<Collider>().bounds.extents.y + 0.1f))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-    public void AdjustFriction()
-    {
-        if (is_grounded)
-        {
-            this.GetComponent<Collider>().material.dynamicFriction = 0.6f;
-            this.GetComponent<Collider>().material.staticFriction = 0.6f;
-        }
-        else
-        {
-            this.GetComponent<Collider>().material.dynamicFriction = 0.0f;
-            this.GetComponent<Collider>().material.staticFriction = 0.0f;
-        }
-    }
-
     public int GetDifficulty()
     {
         return difficulty_value;
+    }
+    public override void Death()
+    {
+        base.Death();
+        GM_Script.GM.AddScore(score);
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<Character_Script>().GetHit(atk);
+        }
     }
 }

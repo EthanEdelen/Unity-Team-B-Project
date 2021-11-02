@@ -5,25 +5,29 @@ using UnityEngine;
 public class Slime_Script : Enemy_Script
 {
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
-
+        base.Start();
     }
 
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
-        jump_time_elapsed += Time.deltaTime;
+        base.Update();
+        
     }
 
-    private void FixedUpdate()
+    public override void FixedUpdate()
     {
+        jump_time_elapsed += Time.deltaTime;
+        base.FixedUpdate();
         is_grounded = CheckGrounded();
-        AdjustFriction();
-        Movement();
-        Rotation();
-        Fix_Rotation();
+        
+        //Movement();
+        //Rotation();
+        //Fix_Rotation();
         Jumping();
-        CheckLife();
+        //CheckLife();
+        //Commented code moved to enemy script fixed update.
     }
 }

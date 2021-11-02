@@ -29,10 +29,10 @@ public class Wave_Script : MonoBehaviour
         if (wave_completed && ready)
         {
             current_wave++;
-            create_list(current_wave);
+            Create_List(current_wave);
             for (int i = 0; i < enemy_list.Count; i++)
             {
-                enemy_object = Instantiate(enemy_list[i], new Vector3 (transform.position.x + Random.Range(-3, 3), transform.position.y + Random.Range(0, 30), transform.position.z + Random.Range(-12, 12)), Quaternion.identity);
+                enemy_object = Instantiate(enemy_list[i], new Vector3 (SpawnPosition.position.x + Random.Range(-3, 3), SpawnPosition.position.y + Random.Range(0, 30), SpawnPosition.position.z + Random.Range(-12, 12)), Quaternion.identity);
             }
             enemy_list.Clear();
             wave_completed = false;
@@ -52,10 +52,11 @@ public class Wave_Script : MonoBehaviour
 
     public void SetReady(bool isReady)
     {
-        ready = true;
+        //ready = true;
+        ready = isReady; //Edited to use temp var isReady
     }
-
-    void create_list(int wave)
+    //Changed naming convention to capital
+    void Create_List(int wave)
     {
         switch(wave)
         {
@@ -71,8 +72,25 @@ public class Wave_Script : MonoBehaviour
                 //enemy_list.Add(fly_prefab);
                 enemy_list.Add(slime_prefab);
                 break;
+            case 3:
+                enemy_list.Add(alligator_prefab);
+                enemy_list.Add(alligator_prefab);
+                enemy_list.Add(alligator_prefab);
+                //enemy_list.Add(fly_prefab);
+                enemy_list.Add(slime_prefab);
+                enemy_list.Add(slime_prefab);
+                enemy_list.Add(slime_prefab);
+                enemy_list.Add(alligator_prefab);
+                enemy_list.Add(alligator_prefab);
+                enemy_list.Add(alligator_prefab);
+                enemy_list.Add(slime_prefab);
+                enemy_list.Add(slime_prefab);
+                enemy_list.Add(slime_prefab);
+                enemy_list.Add(slime_prefab);
+                break;
             default:
                 enemy_list.Add(alligator_prefab);
+
                 print("invalid wave #");
                 break;
         }
