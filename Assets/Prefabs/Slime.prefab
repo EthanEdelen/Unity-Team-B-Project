@@ -302,6 +302,7 @@ MonoBehaviour:
   jump_timer: 1
   jump_time_elapsed: 0
   difficulty_value: 1
+  chance_to_be_special: 0.5
 --- !u!54 &3256349542354580764
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -8,6 +8,11 @@ public class Slime_Script : Enemy_Script
     public override void Start()
     {
         base.Start();
+        if (special)
+        {
+            MeshRenderer renderer = GetComponent<MeshRenderer>();
+            renderer.material.color = new Color(1.0f, 0.0f, 1.0f);
+        }
     }
 
     // Update is called once per frame
@@ -29,5 +34,14 @@ public class Slime_Script : Enemy_Script
         Jumping();
         //CheckLife();
         //Commented code moved to enemy script fixed update.
+    }
+
+    public override void OnCollisionEnter(Collision collision)
+    {
+        base.OnCollisionEnter(collision);
+        if (special)
+        {
+            collision.gameObject.GetComponent<Player_Script>().Ironshoes.Effect(collision.gameObject);
+        }
     }
 }

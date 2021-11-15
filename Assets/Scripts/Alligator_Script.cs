@@ -12,6 +12,13 @@ public class Alligator_Script : Enemy_Script
         //move_speed = 8.0f;
         //rotation = 0.0f;
         //rotate_speed = 100.0f;
+        if (special)
+        {
+            MeshRenderer renderer = GetComponent<MeshRenderer>();
+            renderer.material.color = new Color(0.6f, 0.0f, 0.7f);
+            renderer = transform.GetChild(0).GetComponent<MeshRenderer>();
+            renderer.material.color = new Color(0.6f, 0.0f, 0.7f);
+        }
     }
 
     // Update is called once per frame
@@ -26,7 +33,14 @@ public class Alligator_Script : Enemy_Script
         
     }
 
-    
+    public override void OnCollisionEnter(Collision collision)
+    {
+        base.OnCollisionEnter(collision);
+        if (special)
+        {
+            collision.gameObject.GetComponent<Player_Script>().Slow.Effect(collision.gameObject);
+        }
+    }
 
     //void Movement()
     //{

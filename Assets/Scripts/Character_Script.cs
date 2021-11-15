@@ -229,6 +229,7 @@ public class Character_Script : MonoBehaviour
 
     public void SetMoveSpeed(float newMoveSpeed)
     {
+        Debug.Log(move_speed);
         move_speed = newMoveSpeed;
     }
 

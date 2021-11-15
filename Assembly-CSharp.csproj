@@ -54,6 +54,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Enemy_Script.cs" />
+    <Compile Include="Assets\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Player_Script2.cs" />
     <Compile Include="Assets\Scripts\Alligator_Script.cs" />
     <Compile Include="Assets\Scripts\Fly_Script.cs" />
@@ -67,11 +68,9 @@
     <Compile Include="Assets\Scripts\Attack_Script.cs" />
     <Compile Include="Assets\Scripts\Collectable_Manager.cs" />
     <Compile Include="Assets\Scripts\Debuff_Script.cs" />
-    <Compile Include="Assets\Scripts\Hitbox_Script.cs" />
     <Compile Include="Assets\Scripts\Environment_Manager_Script.cs" />
     <Compile Include="Assets\Scripts\GM_Script.cs" />
     <Compile Include="Assets\Scripts\Spit_Fish_Script.cs" />
-    <Compile Include="Assets\AudioManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

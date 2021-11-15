@@ -8,10 +8,17 @@ public class Enemy_Script : Character_Script
     public float jump_timer = 1.0f;
     public float jump_time_elapsed = 0.0f;
     public int difficulty_value = 1;
+    protected bool special = false;
+    public float chance_to_be_special = 0.0f;
+
     // Start is called before the first frame update
     public override void Start()
     {
         base.Start();
+        if (Random.Range(0.0f, 1.0f) < chance_to_be_special)
+        {
+            special = true;
+        }
     }
 
     // Update is called once per frame
@@ -146,7 +153,7 @@ public class Enemy_Script : Character_Script
         GM_Script.GM.AddScore(score);
     }
 
-    public void OnCollisionEnter(Collision collision)
+    public virtual void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
         {
