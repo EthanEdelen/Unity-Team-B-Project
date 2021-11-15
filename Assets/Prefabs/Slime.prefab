@@ -303,6 +303,7 @@ MonoBehaviour:
   jump_time_elapsed: 0
   difficulty_value: 1
   aquatic: 0
+  chance_to_be_special: 0.5
 --- !u!54 &3256349542354580764
 Rigidbody:
   m_ObjectHideFlags: 0

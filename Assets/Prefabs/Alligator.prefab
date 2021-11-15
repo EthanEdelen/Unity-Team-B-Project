@@ -328,6 +328,7 @@ MonoBehaviour:
   jump_timer: 0
   jump_time_elapsed: 0
   difficulty_value: 1
+  chance_to_be_special: 0.25
   aquatic: 1
 --- !u!1 &3343298892283272510
 GameObject:

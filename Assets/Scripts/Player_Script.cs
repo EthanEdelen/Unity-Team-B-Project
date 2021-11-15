@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,6 +27,12 @@ public class Player_Script : Character_Script
 
     private Rigidbody my_rbody;
 
+    public List<float> debuff_timer_list = new List<float>();
+    public Debuff_Script Slow;
+    public Debuff_Script Weakness;
+    public Debuff_Script Plague;
+    public Debuff_Script Fatigue;
+    public Debuff_Script Ironshoes;
 
     // Start is called before the first frame update
     public override void Start()
@@ -38,6 +45,14 @@ public class Player_Script : Character_Script
 
         my_rbody = GetComponent<Rigidbody>();
 
+        /// Gets number of debuffs and then initializes a timer for each
+        /// Values enums will be used as indices
+        int num_debuffs = Enum.GetValues(typeof(Debuff_Script.DebuffType)).Length;
+        for (int i = 0; i < num_debuffs; i++)
+        {
+            debuff_timer_list.Add(0.0f);
+        }
+
         /*swordHitbox = GameObject.Find("Sword Hitbox");
         swordHitbox.SetActive(false);*/
     }
@@ -45,7 +60,7 @@ public class Player_Script : Character_Script
     public override void Movement()
     {
         /// Velocity approach to movement
-        my_rbody.velocity = new Vector3(up_axis * 15, my_rbody.velocity.y, -side_axis * 20);
+        my_rbody.velocity = new Vector3(up_axis * move_speed, my_rbody.velocity.y, -side_axis * move_speed);
 
         /// Force approach to movement
         /*if (up_axis != 0.0 | side_axis != 0.0)
@@ -181,6 +196,48 @@ public class Player_Script : Character_Script
         return axis;
     }
 
+    void CheckDebuffs(float dt)
+    {
+        for (int i = 0; i < debuff_timer_list.Count; i++)
+        {
+            if (debuff_timer_list[i] > 0)
+            {
+                debuff_timer_list[i] -= dt;
+                if (debuff_timer_list[i] <= 0)
+                {
+                    switch (i)
+                    {
+                        case 0:
+                            {
+                                Slow.EndEffect(this.gameObject);
+                                break;
+                            }
+                        case 1:
+                            {
+                                Weakness.EndEffect(this.gameObject);
+                                break;
+                            }
+                        case 2:
+                            {
+                                Plague.EndEffect(this.gameObject);
+                                break;
+                            }
+                        case 3:
+                            {
+                                Fatigue.EndEffect(this.gameObject);
+                                break;
+                            }
+                        case 4:
+                            {
+                                Ironshoes.EndEffect(this.gameObject);
+                                break;
+                            }
+                    }
+                }                
+            }
+        }
+    }
+
     // Update is called once per frame
     public override void FixedUpdate() // This should be used for physics updates
     {
@@ -215,6 +272,7 @@ public class Player_Script : Character_Script
             Rotation();
             CheckFallen();
             Swing();
+            CheckDebuffs(Time.deltaTime);
         }
 
         /// This can be added to another method as more UI functionality
