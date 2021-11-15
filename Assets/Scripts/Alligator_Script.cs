@@ -18,15 +18,35 @@ public class Alligator_Script : Enemy_Script
     public override void Update()
     {
         base.Update();
+        jump_time_elapsed += Time.deltaTime;
     }
 
     public override void FixedUpdate()
     {
+        float temp = move_speed;
+        GameObject player_object = GM_Script.GM.playerObject;
+        if (player_object != null)
+        {
+            Player_Script player = player_object.GetComponent<Player_Script>();
+            if (player != null)
+            {
+                // The step size is equal to speed times frame time.
+                // Determine which direction to rotate towards
+                float distance = Vector3.Distance(player.transform.position, transform.position);
+                if (distance <= 10 && distance >= 7)
+                {
+                    Jumping();
+                }
+                
+            }
+        }
+        is_grounded = CheckGrounded();
+        Movement();
+        move_speed = temp;
         base.FixedUpdate();
-        
     }
 
-    
+
 
     //void Movement()
     //{

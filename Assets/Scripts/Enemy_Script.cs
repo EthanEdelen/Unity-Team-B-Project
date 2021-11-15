@@ -8,6 +8,7 @@ public class Enemy_Script : Character_Script
     public float jump_timer = 1.0f;
     public float jump_time_elapsed = 0.0f;
     public int difficulty_value = 1;
+    public bool aquatic = false;
     // Start is called before the first frame update
     public override void Start()
     {
@@ -23,18 +24,29 @@ public class Enemy_Script : Character_Script
     public override void FixedUpdate()
     {
         base.FixedUpdate();
+        //Movement();
+
         AdjustFriction();
         Rotation();
         Fix_Rotation();
-        Movement();
         CheckLife();
     }
 
     public void CheckLife()
     {
-        if(transform.position.y <= 0)
+        if (transform.position.y <= -10)
+            Destroy(this.gameObject);
+        if (transform.position.y <= 0 && !aquatic)
         {
             Destroy(this.gameObject);
+        }
+        if (transform.position.y <= 1 && aquatic)
+        {
+            float temp = jump_impulse;
+            jump_impulse = 1500;
+            Jumping();
+            is_grounded = CheckGrounded();
+            jump_impulse = temp;
         }
     }
 
@@ -47,14 +59,6 @@ public class Enemy_Script : Character_Script
             Vector3 move_vec = Vector3.forward * move_speed * Time.fixedDeltaTime;
             my_rbody.AddRelativeForce(move_vec, ForceMode.Impulse);
         }
-    }
-
-    public void FlyMovement()
-    {
-        Rigidbody my_rbody;
-        my_rbody = GetComponent<Rigidbody>();
-        Vector3 move_vec = transform.forward * move_speed * Time.fixedDeltaTime;
-        my_rbody.velocity = move_vec;
     }
 
     public void Rotation()
@@ -131,8 +135,6 @@ public class Enemy_Script : Character_Script
             my_rbody = GetComponent<Rigidbody>();
             my_rbody.AddRelativeForce(jump_vec, ForceMode.Impulse);
             jump_time_elapsed = 0;
-            print(jump_time_elapsed);
-
         }
     }
 

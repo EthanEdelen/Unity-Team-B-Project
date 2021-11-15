@@ -14,15 +14,16 @@ public class Slime_Script : Enemy_Script
     public override void Update()
     {
         base.Update();
-        
+        jump_time_elapsed += Time.deltaTime;
     }
 
     public override void FixedUpdate()
     {
-        jump_time_elapsed += Time.deltaTime;
+        Movement();
+
         base.FixedUpdate();
         is_grounded = CheckGrounded();
-        
+
         //Movement();
         //Rotation();
         //Fix_Rotation();

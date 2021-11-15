@@ -102,8 +102,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2779550468330811641}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: -0.787}
-  m_LocalScale: {x: 0.30466, y: 0.72415, z: 0.58546}
+  m_LocalPosition: {x: -0, y: 0, z: -0.759}
+  m_LocalScale: {x: 0.30466, y: 0.49343234, z: 0.52623487}
   m_Children: []
   m_Father: {fileID: 2779550469234520537}
   m_RootOrder: 0
@@ -135,7 +135,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: acc1010aeeca08447af7e70c762be182, type: 2}
+  - {fileID: 2100000, guid: 778c0bc01c3635341849da5862ebf957, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -198,15 +198,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2779550469234520532}
-  m_LocalRotation: {x: -0, y: -0.0143412715, z: -0, w: 0.99989724}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -14.8, y: 3.6, z: -14.8}
-  m_LocalScale: {x: 1.4461528, y: -0.65210813, z: 3.9114826}
+  m_LocalScale: {x: 1.4461528, y: -1.0365633, z: 3.5470107}
   m_Children:
   - {fileID: 2779550468330811646}
   - {fileID: 774384322733713459}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -1.643, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2779550469234520536
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -234,7 +234,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: acc1010aeeca08447af7e70c762be182, type: 2}
+  - {fileID: 2100000, guid: 778c0bc01c3635341849da5862ebf957, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -294,17 +294,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 2779550469234520532}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06d82cc3b6d920b48bdb8371da2d4a48, type: 3}
+  m_Script: {fileID: 11500000, guid: 54b542fb9fb1803418fe80c9d78cfccb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  current_health: 5
-  max_health: 5
+  current_health: 4
+  max_health: 4
   atk: 5
-  fireRate: 1
-  score: 3
-  alv: 1
-  move_speed: 10
-  jump_impulse: 10000
+  fireRate: 0
+  score: 0
+  alv: 0
+  move_speed: 30
+  jump_impulse: 300
   rotation: 0
   rotate_speed: 100
   is_grounded: 1
@@ -325,9 +325,10 @@ MonoBehaviour:
   healthText: {fileID: 0}
   hpSlider: {fileID: 2372618054967342207}
   moveAxis: {x: 0, y: 0}
-  jump_timer: 1
+  jump_timer: 0
   jump_time_elapsed: 0
   difficulty_value: 1
+  aquatic: 1
 --- !u!1 &3343298892283272510
 GameObject:
   m_ObjectHideFlags: 0

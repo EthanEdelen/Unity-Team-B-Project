@@ -16,6 +16,8 @@ public class Wave_Script : MonoBehaviour
     public GameObject alligator_prefab;
 
     public bool ready = true;
+    public float spawn_time = 5;
+    public float spawn_time_elapsed;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,13 +28,19 @@ public class Wave_Script : MonoBehaviour
     void Update()
     {
         //Bullet bullet = bullet_object.GetComponent<Bullet>();
+        if(wave_completed && !ready)
+        {
+            spawn_time_elapsed += Time.deltaTime;
+            if (spawn_time_elapsed >= spawn_time)
+                ready = true;
+        }
         if (wave_completed && ready)
         {
             current_wave++;
             Create_List(current_wave);
             for (int i = 0; i < enemy_list.Count; i++)
             {
-                enemy_object = Instantiate(enemy_list[i], new Vector3 (SpawnPosition.position.x + Random.Range(-3, 3), SpawnPosition.position.y + Random.Range(0, 30), SpawnPosition.position.z + Random.Range(-12, 12)), Quaternion.identity);
+                enemy_object = Instantiate(enemy_list[i], new Vector3 (SpawnPosition.position.x + Random.Range(-3, 3), SpawnPosition.position.y + Random.Range(0, 10), SpawnPosition.position.z + Random.Range(-12, 12)), Quaternion.identity);
             }
             enemy_list.Clear();
             wave_completed = false;
@@ -90,7 +98,6 @@ public class Wave_Script : MonoBehaviour
                 break;
             default:
                 enemy_list.Add(alligator_prefab);
-
                 print("invalid wave #");
                 break;
         }
