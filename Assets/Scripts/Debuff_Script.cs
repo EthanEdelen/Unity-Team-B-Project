@@ -17,6 +17,9 @@ public class Debuff_Script : CollectableSuper
     private float Timer;
     private bool isActive;
 
+    /// Set timer <=0 for permanent effect
+    public float timer = 5.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,36 +50,79 @@ public class Debuff_Script : CollectableSuper
     public override void Effect(GameObject other)
     {
         Player_Script script = other.GetComponent<Player_Script>();
+        if (script.debuff_timer_list[(int)myDebuff] <= 0)
+        {
+
+            switch (myDebuff)
+            {
+                case DebuffType.FATIGUE:
+                    {
+                        script.SetMoveSpeed(script.GetMoveSpeed() / 2);
+                        break;
+                    }
+                case DebuffType.WEAKNESS:
+                    {
+                        script.SetAtk(script.GetAtk() / 3);
+                        break;
+                    }
+                case DebuffType.PLAGUE:
+                    {
+                        if (script.GetMaxHealth() <= 2)
+                        {
+                            script.SetMaxHealth(2f);
+                        }
+                        else
+                            script.AddMaxHealth(-2);
+                        break;
+                    }
+                case DebuffType.SLOW:
+                    {
+                        script.SetMoveSpeed(script.GetMoveSpeed() / 4);
+                        break;
+                    }
+                case DebuffType.IRONSHOES:
+                    {
+                        script.SetJumpImpulse(script.GetJumpImpulse() / 2);
+                        break;
+                    }
+            }
+        }
+        script.debuff_timer_list[(int)myDebuff] = timer;
+    }
+
+    public void EndEffect(GameObject other)
+    {
+        Player_Script script = other.GetComponent<Player_Script>();
         switch (myDebuff)
         {
             case DebuffType.FATIGUE:
                 {
-                    script.SetAtk(script.GetAtk()/2);
+                    script.SetMoveSpeed(script.GetMoveSpeed() * 2);
                     break;
                 }
             case DebuffType.WEAKNESS:
                 {
-                    script.SetAtk(script.GetAtk() / 3);
+                    script.SetAtk(script.GetAtk() * 3);
                     break;
                 }
             case DebuffType.PLAGUE:
                 {
-                    if (script.GetMaxHealth()<= 2)
+                    if (script.GetMaxHealth() <= 2)
                     {
                         script.SetMaxHealth(2f);
                     }
                     else
-                        script.AddMaxHealth(script.GetMaxHealth() - 2);
+                        script.AddMaxHealth(2);
                     break;
                 }
             case DebuffType.SLOW:
                 {
-                    script.SetMoveSpeed(script.GetMoveSpeed() / 2);
+                    script.SetMoveSpeed(script.GetMoveSpeed() * 4);
                     break;
                 }
             case DebuffType.IRONSHOES:
                 {
-                    script.SetJumpImpulse(script.GetJumpImpulse() / 2);
+                    script.SetJumpImpulse(script.GetJumpImpulse() * 2);
                     break;
                 }
         }
