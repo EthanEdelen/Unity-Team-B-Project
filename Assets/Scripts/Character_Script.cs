@@ -98,6 +98,7 @@ public class Character_Script : MonoBehaviour
             return false;
         }
     }
+
     public void AdjustFriction()
     {
         if (is_grounded)
@@ -188,7 +189,8 @@ public class Character_Script : MonoBehaviour
             current_health = max_health;
         }
     }
-    //Optional function?
+    
+
     public void AddMaxHealth(float newMaxHealth)
     {
         max_health += newMaxHealth;
@@ -247,4 +249,8 @@ public class Character_Script : MonoBehaviour
         jump_impulse = newJumpImpulse;
     }
     
+    public void AddScore(int points)
+    {
+        score += points;
+    }
 }

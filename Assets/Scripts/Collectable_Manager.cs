@@ -10,19 +10,10 @@ public class Collectable_Manager : MonoBehaviour
     public Debuff_Script Debuff;
     public CollectableSuper Super;
     public GameObject Collectable_Prefab;
-    //Hides Component renderer?
     private Renderer renderer;
-    
-    // used to find a spawn point inside the SpawnerBox
-    private static Vector3 RandomPointInBox(Vector3 center, Vector3 size)
-    {
+    private ArrayList spawned;
 
-        return center + new Vector3(
-           (Random.value - 0.5f) * size.x,
-           (Random.value - 0.5f) * size.y,
-           (Random.value - 0.5f) * size.z
-        );
-    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +38,16 @@ public class Collectable_Manager : MonoBehaviour
             SpawnTimer -= Time.deltaTime;
     }
 
+    // used to find a spawn point inside the SpawnerBox
+    private static Vector3 RandomPointInBox(Vector3 center, Vector3 size)
+    {
+
+        return center + new Vector3(
+           (Random.value - 0.5f) * size.x,
+           (Random.value - 0.5f) * size.y,
+           (Random.value - 0.5f) * size.z
+        );
+    }
     //Randomly desiceds if the next drop is a powerup or debuff
     private int PickSpawnType()
     {
@@ -95,6 +96,7 @@ public class Collectable_Manager : MonoBehaviour
             {
                 case 1:
                     Debuff.ChooseDebuff(Debuff_Script.DebuffType.FATIGUE);
+
                     break;
                 case 2:
                     Debuff.ChooseDebuff(Debuff_Script.DebuffType.PLAGUE);
@@ -119,6 +121,28 @@ public class Collectable_Manager : MonoBehaviour
         //EffectSeeder(type);
         Vector3 SpawnPoint = RandomPointInBox(renderer.bounds.center, renderer.bounds.size);
         GameObject collectable = (GameObject)Instantiate(Collectable_Prefab, SpawnPoint, Quaternion.identity);
+        //spawned.Add(collectable);
         
-    }  
+
+    }
+
+    public void Spawning(Vector3 spawnpoint)
+    {
+        //int type = PickSpawnType();
+        //EffectSeeder(type);
+        GameObject collectable = (GameObject)Instantiate(Collectable_Prefab, spawnpoint, Quaternion.identity);
+        //spawned.Add(collectable);
+
+
+    }
+
+    public void Spawning(Vector3 spawnPoint, GameObject spawnedPrefab)
+    {
+        //int type = PickSpawnType();
+        //EffectSeeder(type);        
+        GameObject collectable = (GameObject)Instantiate(spawnedPrefab, spawnPoint, Quaternion.identity);
+        //spawned.Add(collectable);
+
+
+    }
 }

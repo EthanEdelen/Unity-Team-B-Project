@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Enemy_Script : Character_Script
 {
-    //Jump cooldown?
+    //Jump cooldown
+    public GameObject Coin;
+    public Collectable_Manager manager;
     public float jump_timer = 1.0f;
     public float jump_time_elapsed = 0.0f;
     public int difficulty_value = 1;
@@ -12,6 +14,7 @@ public class Enemy_Script : Character_Script
     public override void Start()
     {
         base.Start();
+
     }
 
     // Update is called once per frame
@@ -143,6 +146,7 @@ public class Enemy_Script : Character_Script
     public override void Death()
     {
         base.Death();
+        manager.Spawning(this.gameObject.transform.position, Coin);
         GM_Script.GM.AddScore(score);
     }
 

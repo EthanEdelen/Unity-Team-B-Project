@@ -15,12 +15,14 @@ public class PowerUP_Script : CollectableSuper
 
     }
     public PowerUPType myPowerUPType;
+    private float Timer;
+    private bool isActive;
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(myPowerUPType);
-
+        //Debug.Log(myPowerUPType);
+        isActive = false;
     }
 
     // Update is called once per frame
@@ -34,6 +36,11 @@ public class PowerUP_Script : CollectableSuper
     public void ChoosePowerUP(PowerUPType type)
     {
         myPowerUPType = type;
+    }
+
+    public override void SetTimer(float NewTimer)
+    {
+        Timer = NewTimer;
     }
 
     //The effects that will happen to the player when picked up.
@@ -82,4 +89,10 @@ public class PowerUP_Script : CollectableSuper
 
         }
     }
+
+    public override void SetActive()
+    {
+        isActive = true;
+    }
+
 }

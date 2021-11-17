@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CollectableSuper : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,8 +29,10 @@ public class CollectableSuper : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
+            Debug.Log("hit");
             ApplyEffeccts(collision.gameObject);
             Destroy(this.gameObject);
+            
            
         }
 
@@ -40,10 +43,24 @@ public class CollectableSuper : MonoBehaviour
         }
     }
 
+    private void EffectTimer(float Timer)
+    {
+
+    }
+
     //Pure virtual method to be overloaded by each diffrent type of pick up
     public virtual void Effect(GameObject other)
     {
 
     }
 
+    public virtual void SetTimer(float NewTimer)
+    {
+  
+    }
+
+    public virtual void SetActive()
+    {
+
+    }
 }
