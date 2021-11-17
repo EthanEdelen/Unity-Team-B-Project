@@ -60,18 +60,18 @@
     <Compile Include="Assets\Scripts\Debuff_Script.cs" />
     <Compile Include="Assets\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Collectable_Manager.cs" />
-    <Compile Include="Assets\Scripts\Player_Script.cs" />
+    <Compile Include="Assets\Scripts\Player\Player_Script.cs" />
     <Compile Include="Assets\Scripts\PowerUP_Script.cs" />
-    <Compile Include="Assets\Scripts\Player_Script2.cs" />
-    <Compile Include="Assets\Scripts\Attack_Script.cs" />
+    <Compile Include="Assets\Scripts\Player\Player_Script2.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Attack_Script.cs" />
     <Compile Include="Assets\Scripts\GM_Script.cs" />
     <Compile Include="Assets\Scripts\Enemy\Slime_Script.cs" />
     <Compile Include="Assets\Scripts\Enemy\Fly_Script.cs" />
-    <Compile Include="Assets\Scripts\Character_Script.cs" />
+    <Compile Include="Assets\Scripts\Player\Character_Script.cs" />
     <Compile Include="Assets\Scripts\Enviroment\Wave_Script.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy_Script.cs" />
     <Compile Include="Assets\Scripts\Enemy\Spit_Fish_Script.cs" />
-    <Compile Include="Assets\Scripts\Hitbox_Script.cs" />
+    <Compile Include="Assets\Scripts\Player\Hitbox_Script.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />

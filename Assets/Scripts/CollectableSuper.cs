@@ -24,7 +24,7 @@ public class CollectableSuper : MonoBehaviour
     }
 
     //Checks if the collectable has been collected
-    private void OnCollisionEnter(Collision collision)
+    public virtual void OnCollisionEnter(Collision collision)
     {
 
         if (collision.gameObject.tag == "Player")

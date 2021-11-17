@@ -13,7 +13,7 @@ public class Debuff_Script : CollectableSuper
         IRONSHOES,  //Lowers the PLayers jump height
 
     }
-    DebuffType myDebuff;
+    public DebuffType myDebuff;
     private float Timer;
     private bool isActive;
 
@@ -28,6 +28,11 @@ public class Debuff_Script : CollectableSuper
     void Update()
     {
         
+    }
+
+    public override void OnCollisionEnter(Collision collision)
+    {
+        base.OnCollisionEnter(collision);
     }
 
 

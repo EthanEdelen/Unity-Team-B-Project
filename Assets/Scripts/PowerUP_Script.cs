@@ -32,6 +32,11 @@ public class PowerUP_Script : CollectableSuper
         //Debug.Log(myPowerUPType);
     }
 
+    public override void OnCollisionEnter(Collision collision)
+    {
+        base.OnCollisionEnter(collision); 
+    }
+
     //chooses the powerup type, mostly for a seeder or manager
     public void ChoosePowerUP(PowerUPType type)
     {

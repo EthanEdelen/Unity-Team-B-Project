@@ -9,7 +9,13 @@ public class Collectable_Manager : MonoBehaviour
     public PowerUP_Script PowerUp;
     public Debuff_Script Debuff;
     public CollectableSuper Super;
-    public GameObject Collectable_Prefab;
+    public GameObject RUSH_prefab;
+    public GameObject HOPS_prefab;
+    public GameObject BOUNUSHEALTH_prefab;
+    public GameObject HEALTH_prefab;
+    public GameObject ATTACKSPEED_prefab;
+    public GameObject DAMAGE_prefab;
+    public GameObject COIN_prefab;
     private Renderer renderer;
     private ArrayList spawned;
 
@@ -120,7 +126,7 @@ public class Collectable_Manager : MonoBehaviour
         //int type = PickSpawnType();
         //EffectSeeder(type);
         Vector3 SpawnPoint = RandomPointInBox(renderer.bounds.center, renderer.bounds.size);
-        GameObject collectable = (GameObject)Instantiate(Collectable_Prefab, SpawnPoint, Quaternion.identity);
+        GameObject collectable = (GameObject)Instantiate(COIN_prefab, SpawnPoint, Quaternion.identity);
         //spawned.Add(collectable);
         
 
@@ -130,7 +136,7 @@ public class Collectable_Manager : MonoBehaviour
     {
         //int type = PickSpawnType();
         //EffectSeeder(type);
-        GameObject collectable = (GameObject)Instantiate(Collectable_Prefab, spawnpoint, Quaternion.identity);
+        GameObject collectable = (GameObject)Instantiate(COIN_prefab, spawnpoint, Quaternion.identity);
         //spawned.Add(collectable);
 
 
