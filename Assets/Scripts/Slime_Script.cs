@@ -40,9 +40,11 @@ public class Slime_Script : Enemy_Script
     public override void OnCollisionEnter(Collision collision)
     {
         base.OnCollisionEnter(collision);
-        if (special)
-        {
-            collision.gameObject.GetComponent<Player_Script>().Ironshoes.Effect(collision.gameObject);
-        }
+        Player_Script player = collision.gameObject.GetComponent<Player_Script>();
+        if (player != null)
+            if (special)
+            {
+                player.Ironshoes.Effect(collision.gameObject);
+            }
     }
 }

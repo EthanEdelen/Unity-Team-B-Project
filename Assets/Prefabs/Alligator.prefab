@@ -301,7 +301,7 @@ MonoBehaviour:
   max_health: 4
   atk: 5
   fireRate: 0
-  score: 0
+  score: 4
   alv: 0
   move_speed: 30
   jump_impulse: 300
@@ -309,8 +309,8 @@ MonoBehaviour:
   rotate_speed: 100
   is_grounded: 1
   lastFired: 0
-  immunityFrames: 0
-  immunityGain: 0
+  immunityFrames: 1
+  immunityGain: 1
   meshRenderer: {fileID: 0}
   animator: {fileID: 0}
   bulletObject: {fileID: 0}
@@ -327,9 +327,9 @@ MonoBehaviour:
   moveAxis: {x: 0, y: 0}
   jump_timer: 0
   jump_time_elapsed: 0
-  difficulty_value: 1
-  chance_to_be_special: 0.25
+  difficulty_value: 4
   aquatic: 1
+  chance_to_be_special: 0.25
 --- !u!1 &3343298892283272510
 GameObject:
   m_ObjectHideFlags: 0

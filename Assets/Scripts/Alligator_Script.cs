@@ -56,10 +56,12 @@ public class Alligator_Script : Enemy_Script
     public override void OnCollisionEnter(Collision collision)
     {
         base.OnCollisionEnter(collision);
-        if (special)
-        {
-            collision.gameObject.GetComponent<Player_Script>().Slow.Effect(collision.gameObject);
-        }
+        Player_Script player = collision.gameObject.GetComponent<Player_Script>();
+        if (player != null)
+            if (special)
+            {
+                player.Slow.Effect(collision.gameObject);
+            }
     }
 
 

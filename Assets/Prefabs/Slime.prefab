@@ -273,9 +273,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   current_health: 5
   max_health: 5
-  atk: 2
+  atk: 5
   fireRate: 0
-  score: 0
+  score: 1
   alv: 0
   move_speed: 20
   jump_impulse: 1000
@@ -283,8 +283,8 @@ MonoBehaviour:
   rotate_speed: 100
   is_grounded: 1
   lastFired: 0
-  immunityFrames: 0
-  immunityGain: 0
+  immunityFrames: 1
+  immunityGain: 1
   meshRenderer: {fileID: 0}
   animator: {fileID: 0}
   bulletObject: {fileID: 0}
@@ -302,7 +302,7 @@ MonoBehaviour:
   jump_timer: 1
   jump_time_elapsed: 0
   difficulty_value: 1
-  aquatic: 0
+  aquatic: 1
   chance_to_be_special: 0.5
 --- !u!54 &3256349542354580764
 Rigidbody:
