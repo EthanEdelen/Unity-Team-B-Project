@@ -14,6 +14,7 @@ public class Arrow_script : MonoBehaviour
     void Update()
     {
         Object.Destroy(gameObject, 1.0f);
+
     }
 
     private void OnCollisionEnter(Collision collision)

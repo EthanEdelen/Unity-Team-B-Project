@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2274642507117543021}
   - component: {fileID: 2530028337489197754}
   - component: {fileID: 3186655991121602560}
-  - component: {fileID: 6657063499241615311}
+  - component: {fileID: 1891793083492117163}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -32,8 +32,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -17.336163, y: 7.7284155, z: 3.92}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.7}
-  m_Children:
-  - {fileID: 8760755895511353933}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -127,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4f2d7da3ce4f65438c780d479fd582f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6657063499241615311
+--- !u!114 &1891793083492117163
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,47 +146,3 @@ MonoBehaviour:
   hitClip: {fileID: 0}
   meshRenderer: {fileID: 0}
   rb: {fileID: 0}
---- !u!1 &7555033101780046570
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8760755895511353933}
-  - component: {fileID: 4469904784451561982}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8760755895511353933
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7555033101780046570}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4285711, y: 10, z: 9.999997}
-  m_Children: []
-  m_Father: {fileID: 1518016800785447486}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &4469904784451561982
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7555033101780046570}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.71749943, y: 0.12484503, z: 0.11766791}
-  m_Center: {x: 0.007572475, y: 0.0034749508, z: -0.0024398572}

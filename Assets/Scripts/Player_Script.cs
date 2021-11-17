@@ -18,6 +18,9 @@ public class Player_Script : Character_Script
     public GameObject projectile_Bomb;
     public float launchVelocity = 700f;
 
+    private float NextFire;
+    public float FireRate = 1.0f;
+
     private Vector3 start_position;
 
     private float up_axis = 0.0f;
@@ -225,14 +228,16 @@ public class Player_Script : Character_Script
             Rotation();
             CheckFallen();
             Swing();
-            if (Input.GetButtonDown("Projectile"))
+            if (Input.GetButtonDown("Projectile") && Time.time > NextFire)
             {
+                NextFire = Time.time + FireRate;
                 Debug.Log("Fired projectile");
                 //FireProjectile();  Replaced by character script function
                 Fire_Proj();
             }
-            if (Input.GetButtonDown("Bomb"))
+            if (Input.GetButtonDown("Bomb") && Time.time > NextFire)
             {
+                NextFire = Time.time + FireRate;
                 Debug.Log("Fired Bomb");
                 //FireProjectile();  Replaced by character script function
                 Fire_Bomb();
