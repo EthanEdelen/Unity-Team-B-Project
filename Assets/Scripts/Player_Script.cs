@@ -14,6 +14,9 @@ public class Player_Script : Character_Script
     //public float jump_impulse = 1000000.0f;
     //public float rotation = 0.0f;
     //Inherited from character script^
+    public GameObject projectile_Arrow;
+    public GameObject projectile_Bomb;
+    public float launchVelocity = 700f;
 
     private Vector3 start_position;
 
@@ -135,6 +138,18 @@ public class Player_Script : Character_Script
         }
     }
 
+    void Fire_Proj()
+    {
+        GameObject Arrow = Instantiate(projectile_Arrow, transform.position + transform.right * -2, transform.rotation * projectile_Arrow.transform.rotation);  
+        Arrow.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, launchVelocity / 2, launchVelocity / 2));
+    }
+
+    void Fire_Bomb()
+    {
+        GameObject Bomb = Instantiate(projectile_Bomb, transform.position + transform.right * -2, transform.rotation * projectile_Bomb.transform.rotation); 
+        Bomb.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, launchVelocity / 2, launchVelocity / 2));
+    }
+
     void Swing()
     {
         bool swing_axis = Input.GetButtonDown("Slash");
@@ -191,12 +206,7 @@ public class Player_Script : Character_Script
             AdjustFriction();
             Jumping();
             Movement();
-            if (Input.GetButtonDown("Projectile"))
-            {
-                Debug.Log("Fired projectile");
-                //FireProjectile();  Replaced by character script function
-                Fire();
-            }
+
         }
     }
 
@@ -215,6 +225,18 @@ public class Player_Script : Character_Script
             Rotation();
             CheckFallen();
             Swing();
+            if (Input.GetButtonDown("Projectile"))
+            {
+                Debug.Log("Fired projectile");
+                //FireProjectile();  Replaced by character script function
+                Fire_Proj();
+            }
+            if (Input.GetButtonDown("Bomb"))
+            {
+                Debug.Log("Fired Bomb");
+                //FireProjectile();  Replaced by character script function
+                Fire_Bomb();
+            }
         }
 
         /// This can be added to another method as more UI functionality

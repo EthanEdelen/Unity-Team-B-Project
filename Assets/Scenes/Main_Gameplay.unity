@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657832, g: 0.49641258, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465791, g: 0.49641317, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -336,6 +336,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 125131544}
   m_CullTransparentMesh: 1
+--- !u!1 &199877979 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 591427403, guid: a6e9b558fbddbce478377ccd8638ac13, type: 3}
+  m_PrefabInstance: {fileID: 3607767349604718599}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &199877981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199877979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2816200938826454dab2dc3cd4920bcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  owner: {fileID: 3607767349604718600}
+  damage: 0
+  lifeTime: 0
+  audioSource: {fileID: 0}
+  firedClip: {fileID: 0}
+  hitClip: {fileID: 0}
+  meshRenderer: {fileID: 0}
+  rb: {fileID: 0}
 --- !u!4 &246546692
 Transform:
   m_ObjectHideFlags: 0
@@ -5839,7 +5864,7 @@ PrefabInstance:
     - target: {fileID: 1214476811, guid: a6e9b558fbddbce478377ccd8638ac13, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: a8ca982dd7796c84b929d3744b4165b9, type: 2}
+      objectReference: {fileID: 9100000, guid: 873edea354488234682cb127352c087d, type: 2}
     - target: {fileID: 2373686966927144871, guid: a6e9b558fbddbce478377ccd8638ac13, type: 3}
       propertyPath: hp
       value: 100
@@ -5873,6 +5898,10 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2373686966927144871, guid: a6e9b558fbddbce478377ccd8638ac13, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 461702424660043452, guid: 9fddc8c09b2c0d945b4ea2c748b15083, type: 3}
+    - target: {fileID: 2373686966927144871, guid: a6e9b558fbddbce478377ccd8638ac13, type: 3}
       propertyPath: immunityGain
       value: 1
       objectReference: {fileID: 0}
@@ -5881,9 +5910,17 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2373686966927144871, guid: a6e9b558fbddbce478377ccd8638ac13, type: 3}
+      propertyPath: projectile_Bomb
+      value: 
+      objectReference: {fileID: 6335546237840063605, guid: ea965889c9af8154fb3c86fa980d102f, type: 3}
+    - target: {fileID: 2373686966927144871, guid: a6e9b558fbddbce478377ccd8638ac13, type: 3}
       propertyPath: ui_hp_bar_inner
       value: 
       objectReference: {fileID: 1222904290}
+    - target: {fileID: 2373686966927144871, guid: a6e9b558fbddbce478377ccd8638ac13, type: 3}
+      propertyPath: projectile_Arrow
+      value: 
+      objectReference: {fileID: 461702424660043452, guid: 9fddc8c09b2c0d945b4ea2c748b15083, type: 3}
     - target: {fileID: 3607767349080452939, guid: a6e9b558fbddbce478377ccd8638ac13, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -5940,7 +5977,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 591427408, guid: a6e9b558fbddbce478377ccd8638ac13, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a6e9b558fbddbce478377ccd8638ac13, type: 3}
 --- !u!1 &3607767349604718600 stripped
 GameObject:
