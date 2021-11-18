@@ -155,6 +155,7 @@ public class Character_Script : MonoBehaviour
         Debug.Log(gameObject + " has Died . . .");
         lockInput = true;
         lockMovement = true;
+        alv = false;
         Destroy(gameObject, 1);  //Kill me in one second, enough for a dramatic death.
     }
     public virtual void Movement()

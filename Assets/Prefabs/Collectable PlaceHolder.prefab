@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2081494392161560778}
   - component: {fileID: 2081494392161560781}
   - component: {fileID: 2081494392161560780}
+  - component: {fileID: 709850101658223177}
   - component: {fileID: 2081494392161560783}
   - component: {fileID: 2081494392161560779}
-  - component: {fileID: 942326337597629056}
   m_Layer: 0
   m_Name: Collectable PlaceHolder
   m_TagString: Untagged
@@ -50,7 +50,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2081494392161560782}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -84,6 +84,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &709850101658223177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081494392161560782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3f1309e83b6509479aaf0770f0daf34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnTimer: 5
+  PowerUp: {fileID: 0}
+  Debuff: {fileID: 0}
+  Super: {fileID: 0}
+  RUSH_prefab: {fileID: 6818811023824921499, guid: dfc155ead4f572e43abf6d5399036442, type: 3}
+  HOPS_prefab: {fileID: 3134135855377511603, guid: 2d691cd83604b9447bc5681a9e7250d1, type: 3}
+  BOUNUSHEALTH_prefab: {fileID: 5699675536240976325, guid: 7b40ac789d606694a9c5bdaf1f07780a, type: 3}
+  HEALTH_prefab: {fileID: 4133178129947352806, guid: 169628af93d8893479c13242320beaa3, type: 3}
+  ATTACKSPEED_prefab: {fileID: 8501407356153183761, guid: 9224ef63fb40c6342b29d3adfcf77aa3, type: 3}
+  DAMAGE_prefab: {fileID: 4663389800312560088, guid: 8e008ff7e56efa3438f5360ff7d3acec, type: 3}
+  COIN_prefab: {fileID: 8877464277354160547, guid: 237b962ff79ba184e9dbdbe03941f753, type: 3}
 --- !u!135 &2081494392161560783
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -113,15 +136,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &942326337597629056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2081494392161560782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91a16ec6802ecbe4f9cd436096f2fb27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

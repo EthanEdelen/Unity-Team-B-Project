@@ -12,6 +12,9 @@ public class Enemy_Script : Character_Script
     protected bool special = false;
     public float chance_to_be_special = 0.0f;
 
+    public GameObject Coin;
+    public Collectable_Manager manager;
+
     // Start is called before the first frame update
     public override void Start()
     {
@@ -151,15 +154,22 @@ public class Enemy_Script : Character_Script
     }
     public override void Death()
     {
-        base.Death();
-        GM_Script.GM.AddScore(score);
+        if (alv)
+        {
+            GM_Script.GM.AddScore(score);
+            manager.Spawning(transform.position, Coin);
+            base.Death();
+        }
     }
 
     public virtual void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (alv)
         {
-            collision.gameObject.GetComponent<Character_Script>().GetHit(atk);
+            if (collision.gameObject.tag == "Player")
+            {
+                collision.gameObject.GetComponent<Character_Script>().GetHit(atk);
+            }
         }
     }
 }

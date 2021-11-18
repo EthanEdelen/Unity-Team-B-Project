@@ -5610,7 +5610,13 @@ MonoBehaviour:
   PowerUp: {fileID: 0}
   Debuff: {fileID: 0}
   Super: {fileID: 0}
-  Collectable_Prefab: {fileID: 2081494392161560782, guid: 57fb3abfd82a9dc44b67b38d6e29d331, type: 3}
+  RUSH_prefab: {fileID: 0}
+  HOPS_prefab: {fileID: 0}
+  BOUNUSHEALTH_prefab: {fileID: 0}
+  HEALTH_prefab: {fileID: 0}
+  ATTACKSPEED_prefab: {fileID: 0}
+  DAMAGE_prefab: {fileID: 0}
+  COIN_prefab: {fileID: 0}
 --- !u!65 &1357029862
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7288,7 +7294,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fee8c16ac9c7dad4fbe818b432476e6e, type: 2}
+  - {fileID: 2100000, guid: e1b6a19a13992574f99458934c9263fc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

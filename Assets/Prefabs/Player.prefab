@@ -215,7 +215,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 591427403}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2816200938826454dab2dc3cd4920bcc, type: 3}
+  m_Script: {fileID: 11500000, guid: 7bd6941dba34dd3489252ec512b849d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 3668458527806111402}
@@ -683,10 +683,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3607767349080452939}
   - component: {fileID: 3668458527806111397}
-  - component: {fileID: 2373686966927144871}
   - component: {fileID: 1318556449}
   - component: {fileID: 1318556445}
   - component: {fileID: 3607767349604718601}
+  - component: {fileID: 6030716391463722591}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -719,54 +719,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3668458527806111402}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &2373686966927144871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3668458527806111402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ec3f102993c01a4382f5e73d2c56a38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  current_health: 100
-  max_health: 100
-  atk: 2
-  fireRate: 0.5
-  score: 0
-  alv: 1
-  move_speed: 20
-  jump_impulse: 100000
-  rotation: 0
-  rotate_speed: 100
-  is_grounded: 1
-  lastFired: 0
-  immunityFrames: 0
-  immunityGain: 1
-  meshRenderer: {fileID: 0}
-  animator: {fileID: 0}
-  bulletObject: {fileID: 0}
-  attackObject: {fileID: 0}
-  firePort: {fileID: 0}
-  audioSource: {fileID: 0}
-  hurtClip: {fileID: 0}
-  deathClip: {fileID: 0}
-  spawnClip: {fileID: 0}
-  jumpClip: {fileID: 0}
-  attackClip: {fileID: 0}
-  healthText: {fileID: 0}
-  hpSlider: {fileID: 1645240975}
-  moveAxis: {x: 0, y: 0}
-  ui_hp_bar_inner: {fileID: 0}
-  swordAnimator: {fileID: 1214476811}
-  debuff_timer_list: []
-  Slow: {fileID: 0}
-  Weakness: {fileID: 0}
-  Plague: {fileID: 0}
-  Fatigue: {fileID: 0}
-  Ironshoes: {fileID: 0}
 --- !u!54 &1318556449
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -838,6 +790,54 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6030716391463722591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3668458527806111402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f57df69f624add44a7d0c86076c4531, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  current_health: 100
+  max_health: 100
+  atk: 25
+  fireRate: 0
+  score: 0
+  alv: 1
+  move_speed: 20
+  jump_impulse: 100000
+  rotation: 0
+  rotate_speed: 100
+  is_grounded: 1
+  lastFired: 0
+  immunityFrames: 0
+  immunityGain: 1
+  meshRenderer: {fileID: 0}
+  animator: {fileID: 0}
+  bulletObject: {fileID: 0}
+  attackObject: {fileID: 0}
+  firePort: {fileID: 0}
+  audioSource: {fileID: 0}
+  hurtClip: {fileID: 0}
+  deathClip: {fileID: 0}
+  spawnClip: {fileID: 0}
+  jumpClip: {fileID: 0}
+  attackClip: {fileID: 0}
+  healthText: {fileID: 0}
+  hpSlider: {fileID: 1645240975}
+  moveAxis: {x: 0, y: 0}
+  ui_hp_bar_inner: {fileID: 0}
+  swordAnimator: {fileID: 1214476811}
+  debuff_timer_list: []
+  Slow: {fileID: 0}
+  Weakness: {fileID: 0}
+  Plague: {fileID: 0}
+  Fatigue: {fileID: 0}
+  Ironshoes: {fileID: 0}
 --- !u!114 &3607767349080452951
 MonoBehaviour:
   m_ObjectHideFlags: 0

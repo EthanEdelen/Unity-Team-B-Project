@@ -8,19 +8,19 @@ public class Fly_Script : Enemy_Script
     float focus_span = .2f;
     float focus_elapsed = 0;
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
       
     }
 
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
         base.Update();
         focus_elapsed += Time.deltaTime;
     }
 
-    private void FixedUpdate()
+    public override void FixedUpdate()
     {
         FlyMovement();
         base.FixedUpdate();

@@ -8,7 +8,7 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 0
+  m_EditorHideFlags: 1
   m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -19,13 +19,9 @@ MonoBehaviour:
     width: 1536
     height: 780.8
   m_ShowMode: 4
-<<<<<<< HEAD
-  m_Title: Project
-=======
   m_Title: Game
->>>>>>> Amber_Enemy_2
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 875, y: 300}
+  m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -47,16 +43,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
-    width: 1920
-    height: 947
-  m_MinSize: {x: 678, y: 492}
+    width: 1536
+    height: 730.8
+  m_MinSize: {x: 677, y: 492}
   m_MaxSize: {x: 14001, y: 14042}
   vertical: 0
-<<<<<<< HEAD
-  controlID: 66
-=======
-  controlID: 143
->>>>>>> Amber_Enemy_2
+  controlID: 88
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -67,26 +59,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: InspectorWindow
+  m_Name: 
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
-<<<<<<< HEAD
-    x: 1466
+    x: 1172.8
     y: 0
-    width: 454
-=======
-    x: 1500
-    y: 0
-    width: 420
->>>>>>> Amber_Enemy_2
-    height: 947
+    width: 363.19995
+    height: 730.8
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 15}
+  m_ActualView: {fileID: 14}
   m_Panes:
-  - {fileID: 15}
+  - {fileID: 14}
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &4
@@ -99,27 +85,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: SceneHierarchyWindow
+  m_Name: 
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-<<<<<<< HEAD
-    width: 377
-    height: 561
+    width: 290.4
+    height: 432.8
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
-=======
-    width: 272
-    height: 551
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
->>>>>>> Amber_Enemy_2
-  m_ActualView: {fileID: 16}
+  m_ActualView: {fileID: 15}
   m_Panes:
-  - {fileID: 16}
+  - {fileID: 15}
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &5
@@ -138,21 +117,15 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-<<<<<<< HEAD
-    y: 561
-    width: 1466
-    height: 386
-=======
-    y: 551
-    width: 1500
-    height: 396
->>>>>>> Amber_Enemy_2
+    y: 432.8
+    width: 1172.8
+    height: 298
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 14}
+  m_ActualView: {fileID: 13}
   m_Panes:
-  - {fileID: 14}
-  - {fileID: 19}
+  - {fileID: 13}
+  - {fileID: 18}
   m_Selected: 0
   m_LastSelected: 1
 --- !u!114 &6
@@ -175,15 +148,9 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-<<<<<<< HEAD
-    width: 1920
-    height: 997
-  m_MinSize: {x: 875, y: 542}
-=======
     width: 1536
-    height: 781
+    height: 780.8
   m_MinSize: {x: 875, y: 300}
->>>>>>> Amber_Enemy_2
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
   m_TopViewHeight: 30
@@ -211,8 +178,8 @@ MonoBehaviour:
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
   m_LoadedToolbars:
-  - {fileID: 20}
-  m_MainToolbar: {fileID: 20}
+  - {fileID: 19}
+  m_MainToolbar: {fileID: 19}
   m_LastLoadedLayoutName: 
 --- !u!114 &8
 MonoBehaviour:
@@ -230,7 +197,7 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 761
+    y: 760.8
     width: 1536
     height: 20
   m_MinSize: {x: 0, y: 0}
@@ -254,20 +221,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-<<<<<<< HEAD
-    width: 1466
-=======
-    width: 1500
->>>>>>> Amber_Enemy_2
-    height: 947
-  m_MinSize: {x: 403, y: 492}
+    width: 1172.8
+    height: 730.8
+  m_MinSize: {x: 402, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-<<<<<<< HEAD
-  controlID: 117
-=======
-  controlID: 75
->>>>>>> Amber_Enemy_2
+  controlID: 89
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -287,21 +246,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-<<<<<<< HEAD
-    width: 1466
-    height: 561
+    width: 1172.8
+    height: 432.8
   m_MinSize: {x: 402, y: 221}
   m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
-  controlID: 118
-=======
-    width: 1500
-    height: 551
-  m_MinSize: {x: 403, y: 221}
-  m_MaxSize: {x: 8003, y: 4021}
-  vertical: 0
-  controlID: 76
->>>>>>> Amber_Enemy_2
+  controlID: 90
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -317,56 +267,20 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-<<<<<<< HEAD
-    x: 377
+    x: 290.4
     y: 0
-    width: 1089
-    height: 561
-=======
-    x: 218
-    y: 0
-    width: 1228
-    height: 551
->>>>>>> Amber_Enemy_2
+    width: 882.4
+    height: 432.8
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 17}
+  m_ActualView: {fileID: 16}
   m_Panes:
+  - {fileID: 16}
   - {fileID: 17}
-  - {fileID: 18}
-  - {fileID: 13}
   - {fileID: 12}
   m_Selected: 0
   m_LastSelected: 1
 --- !u!114 &12
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12071, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Animation
-    m_Image: {fileID: -8166618308981325432, guid: 0000000000000000d000000000000000, type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 403
-    y: 73
-    width: 962
-    height: 540
-  m_ViewDataDictionary: {fileID: 0}
-  m_LockTracker:
-    m_IsLocked: 0
-  m_LastSelectedObjectID: 16176
---- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -382,18 +296,18 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Animator
-    m_Image: {fileID: -1673928668082335149, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: 1711060831702674872, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 272
-    y: 73
-    width: 1226
-    height: 530
+    x: 295.2
+    y: 80.8
+    width: 872.4
+    height: 403
   m_ViewDataDictionary: {fileID: 0}
   m_ViewTransforms:
     m_KeySerializationHelper:
-    - {fileID: -785104714808441264, guid: a8ca982dd7796c84b929d3744b4165b9, type: 2}
+    - {fileID: -785104714808441264, guid: 873edea354488234682cb127352c087d, type: 2}
     m_ValueSerializationHelper:
     - e00: 1
       e01: 0
@@ -412,9 +326,9 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: a8ca982dd7796c84b929d3744b4165b9, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: 873edea354488234682cb127352c087d, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: -785104714808441264, guid: a8ca982dd7796c84b929d3744b4165b9, type: 2}
+  - m_Target: {fileID: -785104714808441264, guid: 873edea354488234682cb127352c087d, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -427,7 +341,7 @@ MonoBehaviour:
   m_CurrentEditor: 0
   m_LayerEditor:
     m_SelectedLayerIndex: 0
---- !u!114 &14
+--- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -443,20 +357,14 @@ MonoBehaviour:
   m_MaxSize: {x: 10000, y: 10000}
   m_TitleContent:
     m_Text: Project
-    m_Image: {fileID: -5467254957812901981, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -5179483145760003458, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
     x: 0
-<<<<<<< HEAD
-    y: 634
-    width: 1465
-    height: 365
-=======
-    y: 624
-    width: 1499
-    height: 375
->>>>>>> Amber_Enemy_2
+    y: 506.4
+    width: 1171.8
+    height: 277
   m_ViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -471,38 +379,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-<<<<<<< HEAD
     - Assets/Scripts
-=======
-    - Assets/Prefabs
->>>>>>> Amber_Enemy_2
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-<<<<<<< HEAD
   - Assets/Scripts
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: A:\3801Game\Unity-Team-B-Project
-=======
-  - Assets/Prefabs
-  m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\Amber\Documents\GitHub\Unity-Team-B-Project
->>>>>>> Amber_Enemy_2
+  m_LastProjectPath: C:\Users\patri\OneDrive\Documents\SSU\6th Semester Fall 2021\ETGG3801\Unity\Unity-Team-B-Project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-<<<<<<< HEAD
-    m_SelectedIDs: 98410000
-    m_LastClickedID: 16792
-    m_ExpandedIDs: 000000006841000000ca9a3b
-=======
-    m_SelectedIDs: 0e430000
-    m_LastClickedID: 17166
-    m_ExpandedIDs: 00000000f442000000ca9a3b
->>>>>>> Amber_Enemy_2
+    scrollPos: {x: 0, y: 39}
+    m_SelectedIDs: 78410000
+    m_LastClickedID: 16760
+    m_ExpandedIDs: 00000000544100007241000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -530,11 +422,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-<<<<<<< HEAD
-    m_ExpandedIDs: 0000000068410000
-=======
-    m_ExpandedIDs: 00000000f4420000
->>>>>>> Amber_Enemy_2
+    m_ExpandedIDs: 0000000054410000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -562,11 +450,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-<<<<<<< HEAD
     m_ExpandedInstanceIDs: c6230000
-=======
-    m_ExpandedInstanceIDs: c62300000000000080400000
->>>>>>> Amber_Enemy_2
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -582,7 +466,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 5}
+      m_ClientGUIView: {fileID: 0}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -594,7 +478,7 @@ MonoBehaviour:
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
---- !u!114 &15
+--- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -610,20 +494,14 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Inspector
-    m_Image: {fileID: -2667387946076563598, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -440750813802333266, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
-    x: 1466
-    y: 73
-    width: 453
-=======
-    x: 1500
-    y: 73
-    width: 419
->>>>>>> Amber_Enemy_2
-    height: 926
+    x: 1172.8
+    y: 73.6
+    width: 362.19995
+    height: 709.8
   m_ViewDataDictionary: {fileID: 0}
   m_ObjectsLockedBeforeSerialization: []
   m_InstanceIDsLockedBeforeSerialization: 
@@ -632,12 +510,12 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 900
+  m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_LockTracker:
     m_IsLocked: 0
   m_PreviewWindow: {fileID: 0}
---- !u!114 &16
+--- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -653,32 +531,21 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Hierarchy
-    m_Image: {fileID: 7966133145522015247, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -3734745235275155857, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 73
-<<<<<<< HEAD
-    width: 376
-    height: 540
-=======
-    width: 271
-    height: 530
->>>>>>> Amber_Enemy_2
+    y: 73.6
+    width: 289.4
+    height: 411.8
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-<<<<<<< HEAD
-      m_SelectedIDs: ee090000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 38faffff
-=======
-      m_SelectedIDs: e4400000
-      m_LastClickedID: 0
-      m_ExpandedIDs: f6eeffff78efffff2ef8ffffe0f8fffff8f8ffffa0faffffcafaffff
->>>>>>> Amber_Enemy_2
+      m_ExpandedIDs: 6481ffff9a8bffff088fffff0a93ffff52abffff46adffffb2b3ffff3afaffff36fbffff963e0000765400008a5b000030710000b2720000ba720000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -694,7 +561,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 4}
+        m_ClientGUIView: {fileID: 0}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -702,7 +569,7 @@ MonoBehaviour:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
   m_WindowGUID: 4c969a2b90040154d917609493e03593
---- !u!114 &17
+--- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -718,19 +585,14 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Scene
-    m_Image: {fileID: 2593428753322112591, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: 8634526014445323508, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 377
-    y: 73
-<<<<<<< HEAD
-    width: 1087
-    height: 540
-=======
-    width: 1226
-    height: 530
->>>>>>> Amber_Enemy_2
+    x: 290.4
+    y: 73.6
+    width: 880.4
+    height: 411.8
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
   m_WindowGUID: cc27987af1a868c49b0894db9c0f5429
@@ -743,15 +605,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-<<<<<<< HEAD
-    m_Target: {x: -22.920805, y: 10.380955, z: -3.9718494}
+    m_Target: {x: -11.34, y: 3.06, z: 0}
     speed: 2
-    m_Value: {x: -22.920805, y: 10.380955, z: -3.9718494}
-=======
-    m_Target: {x: -9.566638, y: 6.300683, z: -0.6689238}
-    speed: 2
-    m_Value: {x: -9.566638, y: 6.300683, z: -0.6689238}
->>>>>>> Amber_Enemy_2
+    m_Value: {x: -11.34, y: 3.06, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -798,30 +654,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-<<<<<<< HEAD
-    m_Target: {x: 0.030304482, y: 0.6914843, z: -0.029062174, w: 0.72115403}
+    m_Target: {x: 0.18216276, y: 0.7009263, z: -0.19285768, w: 0.6620715}
     speed: 2
-    m_Value: {x: 0.030348396, y: 0.69040984, z: -0.029017024, w: 0.7221989}
+    m_Value: {x: 0.18216152, y: 0.70092154, z: -0.19285637, w: 0.66206706}
   m_Size:
-    m_Target: 14.221005
+    m_Target: 18.40717
     speed: 2
-    m_Value: 14.221005
-=======
-    m_Target: {x: 0.143724, y: 0.7093554, z: -0.15141787, w: 0.67325574}
-    speed: 2
-    m_Value: {x: 0.14372095, y: 0.70934045, z: -0.15141468, w: 0.67324156}
-  m_Size:
-    m_Target: 11.836575
-    speed: 2
-    m_Value: 11.836575
->>>>>>> Amber_Enemy_2
+    m_Value: 18.40717
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 1.4802595
-    m_SpeedNormalized: 0.7399998
+    m_Speed: 1
+    m_SpeedNormalized: 0.5
     m_SpeedMin: 0.001
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -839,7 +685,7 @@ MonoBehaviour:
   m_SceneVisActive: 1
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
---- !u!114 &18
+--- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -855,21 +701,14 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Game
-    m_Image: {fileID: -6423792434712278376, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: 4621777727084837110, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
-    x: 382
-    y: 81
-    width: 1078
-    height: 531
-=======
-    x: 272
-    y: 73
-    width: 1226
-    height: 530
->>>>>>> Amber_Enemy_2
+    x: 290.4
+    y: 73.6
+    width: 880.4
+    height: 411.8
   m_ViewDataDictionary: {fileID: 0}
   m_SerializedViewNames: []
   m_SerializedViewValues: []
@@ -877,11 +716,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-<<<<<<< HEAD
-  m_TargetSize: {x: 1078, y: 510}
-=======
-  m_TargetSize: {x: 1226, y: 509}
->>>>>>> Amber_Enemy_2
+  m_TargetSize: {x: 880.4, y: 390.8}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -896,17 +731,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-<<<<<<< HEAD
-    m_HBaseRangeMin: -539
-    m_HBaseRangeMax: 539
-    m_VBaseRangeMin: -255
-    m_VBaseRangeMax: 255
-=======
-    m_HBaseRangeMin: -613
-    m_HBaseRangeMax: 613
-    m_VBaseRangeMin: -254.5
-    m_VBaseRangeMax: 254.5
->>>>>>> Amber_Enemy_2
+    m_HBaseRangeMin: -352.16
+    m_HBaseRangeMax: 352.16
+    m_VBaseRangeMin: -156.31999
+    m_VBaseRangeMax: 156.31999
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -924,46 +752,29 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-<<<<<<< HEAD
-      width: 1078
-      height: 510
+      width: 880.4
+      height: 390.8
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 539, y: 255}
-=======
-      width: 1226
-      height: 509
-    m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 613, y: 254.5}
->>>>>>> Amber_Enemy_2
+    m_Translation: {x: 440.2, y: 195.4}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-<<<<<<< HEAD
-      x: -539
-      y: -255
-      width: 1078
-      height: 510
+      x: -440.2
+      y: -195.4
+      width: 880.4
+      height: 390.8
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 1078, y: 531}
-=======
-      x: -613
-      y: -254.5
-      width: 1226
-      height: 509
-    m_MinimalGUI: 1
-  m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 1226, y: 530}
->>>>>>> Amber_Enemy_2
+  m_LastWindowPixelSize: {x: 1100.5, y: 514.75}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
   m_XRRenderMode: 0
   m_RenderTexture: {fileID: 0}
---- !u!114 &19
+--- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -979,22 +790,16 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Console
-    m_Image: {fileID: -4327648978806127646, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -4950941429401207979, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
     x: 0
-<<<<<<< HEAD
-    y: 634
-    width: 1465
-    height: 365
-=======
-    y: 624
-    width: 1499
-    height: 375
->>>>>>> Amber_Enemy_2
+    y: 506.4
+    width: 1171.8
+    height: 277
   m_ViewDataDictionary: {fileID: 0}
---- !u!114 &20
+--- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

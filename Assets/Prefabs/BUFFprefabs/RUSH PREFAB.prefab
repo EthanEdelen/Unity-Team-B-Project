@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5654010520860000844}
   - component: {fileID: 1736358685718787941}
   - component: {fileID: 2183011139234775159}
+  - component: {fileID: 7258824357241257477}
   - component: {fileID: 8665485684066826403}
-  - component: {fileID: -8594486915019499261}
   - component: {fileID: -6877564652068684183}
   m_Layer: 0
   m_Name: RUSH PREFAB
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b0e52e8613993fa41afd6974bc1ca840, type: 2}
+  - {fileID: 2100000, guid: 8340f8546274cc34688f0b1673b5e768, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -84,6 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7258824357241257477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6818811023824921499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e3e4aa61ba4e9d4ba8485da999a84f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myPowerUPType: 4
 --- !u!135 &8665485684066826403
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -97,19 +110,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-8594486915019499261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6818811023824921499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fd211b2dfdb1eb4aa508171e548af3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myPowerUPType: 4
 --- !u!54 &-6877564652068684183
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -37,10 +37,10 @@ public class CollectableSuper : MonoBehaviour
         }
 
         //eneimes walking over pickups kill the pickup as of 10/23
-        if (collision.gameObject.tag == "Enemy")
+        /*if (collision.gameObject.tag == "Enemy")
         {
             Destroy(this.gameObject);
-        }
+        }*/
     }
 
     private void EffectTimer(float Timer)

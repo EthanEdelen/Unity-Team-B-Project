@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9d8675ea292e65240a5eea91e1524c80, type: 2}
+  - {fileID: 2100000, guid: 9dce8771b99760d468459a44221d5904, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -155,7 +155,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9d8675ea292e65240a5eea91e1524c80, type: 2}
+  - {fileID: 2100000, guid: 9dce8771b99760d468459a44221d5904, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -325,7 +325,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9d8675ea292e65240a5eea91e1524c80, type: 2}
+  - {fileID: 2100000, guid: 9dce8771b99760d468459a44221d5904, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -585,7 +585,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9d8675ea292e65240a5eea91e1524c80, type: 2}
+  - {fileID: 2100000, guid: 9dce8771b99760d468459a44221d5904, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -804,7 +804,7 @@ GameObject:
   - component: {fileID: 1156354931467536553}
   - component: {fileID: 1156354931467536554}
   - component: {fileID: 1156354931467536555}
-  - component: {fileID: 1156354931467536558}
+  - component: {fileID: 46391636060380336}
   m_Layer: 0
   m_Name: Turtle
   m_TagString: Enemy
@@ -859,7 +859,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d5ca862f105693d4c867009d863232cc, type: 2}
+  - {fileID: 2100000, guid: f390e326d35d8b145b8cfb4f7f585334, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -910,7 +910,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1156354931467536558
+--- !u!114 &46391636060380336
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -919,7 +919,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1156354931467536548}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 400d43307a3c60048915d773983279da, type: 3}
+  m_Script: {fileID: 11500000, guid: da17a7d359352484a93c2e8488f9f6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   current_health: 10
@@ -927,15 +927,15 @@ MonoBehaviour:
   atk: 1
   fireRate: 0
   score: 5
-  alv: 0
-  move_speed: 100
-  jump_impulse: 1500
+  alv: 1
+  move_speed: 10
+  jump_impulse: 10000
   rotation: 0
   rotate_speed: 100
   is_grounded: 1
   lastFired: 0
-  immunityFrames: 1
-  immunityGain: 1
+  immunityFrames: 0
+  immunityGain: 0
   meshRenderer: {fileID: 0}
   animator: {fileID: 0}
   bulletObject: {fileID: 0}
@@ -955,6 +955,8 @@ MonoBehaviour:
   difficulty_value: 5
   aquatic: 0
   chance_to_be_special: 0
+  Coin: {fileID: 8877464277354160547, guid: 237b962ff79ba184e9dbdbe03941f753, type: 3}
+  manager: {fileID: 709850101658223177, guid: 57fb3abfd82a9dc44b67b38d6e29d331, type: 3}
 --- !u!1 &1156354931484699683
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,7 +1017,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9d8675ea292e65240a5eea91e1524c80, type: 2}
+  - {fileID: 2100000, guid: 9dce8771b99760d468459a44221d5904, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -1,9 +1,5 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/AmberScene.unity
-=======
-- path: Assets/Scenes/Test Scene - Kevin.unity
->>>>>>> Kevin_Branch
+- path: Assets/Scenes/Main_Gameplay.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

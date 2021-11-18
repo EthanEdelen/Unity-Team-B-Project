@@ -135,7 +135,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 778c0bc01c3635341849da5862ebf957, type: 2}
+  - {fileID: 2100000, guid: acc1010aeeca08447af7e70c762be182, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 2779550469234520539}
   - component: {fileID: 2779550469234520538}
   - component: {fileID: 2779550469234520533}
-  - component: {fileID: 2779550469234520542}
+  - component: {fileID: 5464587075653028812}
   m_Layer: 0
   m_Name: Alligator
   m_TagString: Enemy
@@ -234,7 +234,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 778c0bc01c3635341849da5862ebf957, type: 2}
+  - {fileID: 2100000, guid: acc1010aeeca08447af7e70c762be182, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -285,7 +285,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2779550469234520542
+--- !u!114 &5464587075653028812
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -294,23 +294,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 2779550469234520532}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54b542fb9fb1803418fe80c9d78cfccb, type: 3}
+  m_Script: {fileID: 11500000, guid: 295fb347195b40f4dbad1bc188acab73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  current_health: 4
-  max_health: 4
+  current_health: 5
+  max_health: 5
   atk: 5
   fireRate: 0
-  score: 4
-  alv: 0
-  move_speed: 30
-  jump_impulse: 300
+  score: 3
+  alv: 1
+  move_speed: 10
+  jump_impulse: 1000
   rotation: 0
   rotate_speed: 100
   is_grounded: 1
   lastFired: 0
-  immunityFrames: 1
-  immunityGain: 1
+  immunityFrames: 0
+  immunityGain: 0
   meshRenderer: {fileID: 0}
   animator: {fileID: 0}
   bulletObject: {fileID: 0}
@@ -325,11 +325,13 @@ MonoBehaviour:
   healthText: {fileID: 0}
   hpSlider: {fileID: 2372618054967342207}
   moveAxis: {x: 0, y: 0}
-  jump_timer: 0
+  jump_timer: 1
   jump_time_elapsed: 0
-  difficulty_value: 4
+  difficulty_value: 3
   aquatic: 1
   chance_to_be_special: 0.25
+  Coin: {fileID: 8877464277354160547, guid: 237b962ff79ba184e9dbdbe03941f753, type: 3}
+  manager: {fileID: 709850101658223177, guid: 57fb3abfd82a9dc44b67b38d6e29d331, type: 3}
 --- !u!1 &3343298892283272510
 GameObject:
   m_ObjectHideFlags: 0

@@ -173,8 +173,8 @@ GameObject:
   - component: {fileID: 3256349542354580760}
   - component: {fileID: 3256349542354580767}
   - component: {fileID: 3256349542354580766}
-  - component: {fileID: 3256349542354580765}
   - component: {fileID: 3256349542354580764}
+  - component: {fileID: 837754141174905350}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Enemy
@@ -224,7 +224,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 58061abe1c034ad40855ec5e8b9691ad, type: 2}
+  - {fileID: 2100000, guid: cf1a681ff6948084bb9602e34c7e1fce, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -259,7 +259,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3256349542354580765
+--- !u!54 &3256349542354580764
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3256349542354580707}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &837754141174905350
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -268,23 +284,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 3256349542354580707}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce99661f9b819a147aa38c03e003f431, type: 3}
+  m_Script: {fileID: 11500000, guid: e773cffd598d5754d98108f65ef671f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  current_health: 5
-  max_health: 5
+  current_health: 3
+  max_health: 3
   atk: 5
   fireRate: 0
   score: 1
-  alv: 0
-  move_speed: 20
+  alv: 1
+  move_speed: 10
   jump_impulse: 1000
   rotation: 0
   rotate_speed: 100
   is_grounded: 1
   lastFired: 0
-  immunityFrames: 1
-  immunityGain: 1
+  immunityFrames: 0
+  immunityGain: 0
   meshRenderer: {fileID: 0}
   animator: {fileID: 0}
   bulletObject: {fileID: 0}
@@ -303,23 +319,9 @@ MonoBehaviour:
   jump_time_elapsed: 0
   difficulty_value: 1
   aquatic: 1
-  chance_to_be_special: 0.5
---- !u!54 &3256349542354580764
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3256349542354580707}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  chance_to_be_special: 0.33
+  Coin: {fileID: 8877464277354160547, guid: 237b962ff79ba184e9dbdbe03941f753, type: 3}
+  manager: {fileID: 709850101658223177, guid: 57fb3abfd82a9dc44b67b38d6e29d331, type: 3}
 --- !u!1 &3931525027134021581
 GameObject:
   m_ObjectHideFlags: 0
