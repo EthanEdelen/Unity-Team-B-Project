@@ -293,7 +293,7 @@ MonoBehaviour:
   fireRate: 0
   score: 1
   alv: 1
-  move_speed: 10
+  move_speed: 30
   jump_impulse: 1000
   rotation: 0
   rotate_speed: 100
