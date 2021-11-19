@@ -183,7 +183,7 @@ public class Environment_Manager_Script : MonoBehaviour
 
     void Wave_In_Progress()
     {
-        Debug.Log("Wave in progress . . .");
+        //Debug.Log("Wave in progress . . .");
         //stateTimer -= Time.deltaTime;
         //if (stateTimer < 0.0f) // Change this instead to where all of the enemies are killed
         //{
