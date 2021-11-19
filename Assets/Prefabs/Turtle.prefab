@@ -934,8 +934,8 @@ MonoBehaviour:
   rotate_speed: 100
   is_grounded: 1
   lastFired: 0
-  immunityFrames: 0
-  immunityGain: 0
+  immunityFrames: 1
+  immunityGain: 1
   meshRenderer: {fileID: 0}
   animator: {fileID: 0}
   bulletObject: {fileID: 0}
