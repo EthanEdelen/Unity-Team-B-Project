@@ -57,16 +57,19 @@ public class Debuff_Script : CollectableSuper
             {
                 case DebuffType.FATIGUE:
                     {
+                        Debug.Log("Fatiqued");
                         script.SetMoveSpeed(script.GetMoveSpeed() / 2);
                         break;
                     }
                 case DebuffType.WEAKNESS:
                     {
+                        Debug.Log("Weak");
                         script.SetAtk(script.GetAtk() / 3);
                         break;
                     }
                 case DebuffType.PLAGUE:
                     {
+                        Debug.Log("Plagued");
                         if (script.GetMaxHealth() <= 2)
                         {
                             script.SetMaxHealth(2f);
@@ -77,17 +80,20 @@ public class Debuff_Script : CollectableSuper
                     }
                 case DebuffType.SLOW:
                     {
+                        Debug.Log("Slowed");
                         script.SetMoveSpeed(script.GetMoveSpeed() / 4);
                         break;
                     }
                 case DebuffType.IRONSHOES:
                     {
+                        Debug.Log("Ironshoes");
                         script.SetJumpImpulse(script.GetJumpImpulse() / 2);
                         break;
                     }
             }
         }
         script.debuff_timer_list[(int)myDebuff] = timer;
+        Debug.Log(script.debuff_timer_list[(int)myDebuff]);
     }
 
     public void EndEffect(GameObject other)
@@ -97,16 +103,19 @@ public class Debuff_Script : CollectableSuper
         {
             case DebuffType.FATIGUE:
                 {
+                    Debug.Log("Fatiqued End");
                     script.SetMoveSpeed(script.GetMoveSpeed() * 2);
                     break;
                 }
             case DebuffType.WEAKNESS:
                 {
+                    Debug.Log("Weak End");
                     script.SetAtk(script.GetAtk() * 3);
                     break;
                 }
             case DebuffType.PLAGUE:
                 {
+                    Debug.Log("Plague End");
                     if (script.GetMaxHealth() <= 2)
                     {
                         script.SetMaxHealth(2f);
@@ -117,11 +126,13 @@ public class Debuff_Script : CollectableSuper
                 }
             case DebuffType.SLOW:
                 {
+                    Debug.Log("Slow End");
                     script.SetMoveSpeed(script.GetMoveSpeed() * 4);
                     break;
                 }
             case DebuffType.IRONSHOES:
                 {
+                    Debug.Log("Ironshoes End");
                     script.SetJumpImpulse(script.GetJumpImpulse() * 2);
                     break;
                 }

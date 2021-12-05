@@ -218,6 +218,7 @@ public class Player_Script : Character_Script
     {
         for (int i = 0; i < debuff_timer_list.Count; i++)
         {
+            Debug.Log(debuff_timer_list[i]);
             if (debuff_timer_list[i] > 0)
             {
                 debuff_timer_list[i] -= dt;
@@ -282,6 +283,7 @@ public class Player_Script : Character_Script
             up_axis = ClampAxis(Input.GetAxis("Vertical"));
             side_axis = ClampAxis(Input.GetAxis("Horizontal"));
 
+            CheckDebuffs(Time.deltaTime);
             Rotation();
             CheckFallen();
             Swing();

@@ -26,14 +26,14 @@ public class CollectableSuper : MonoBehaviour
     //Checks if the collectable has been collected
     public virtual void OnCollisionEnter(Collision collision)
     {
-
-        if (collision.gameObject.tag == "Player")
+        GameObject collisionGameObject = collision.gameObject;
+        if (collisionGameObject.tag == "Player")
         {
-            Debug.Log("hit");
-            ApplyEffeccts(collision.gameObject);
-            Destroy(this.gameObject);
             
-           
+            //Debug.Log("got coin");
+            //ApplyEffeccts(collision.gameObject);
+            collisionGameObject.GetComponent<Character_Script>().Heal(5);
+            Destroy(this.gameObject);
         }
 
         //eneimes walking over pickups kill the pickup as of 10/23

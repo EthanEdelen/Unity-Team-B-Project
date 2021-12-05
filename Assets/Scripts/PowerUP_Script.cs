@@ -9,11 +9,11 @@ public class PowerUP_Script : CollectableSuper
         HEALTH,         //Gives the player health up-to their maximum health
         DAMAGE,         //Increases the damage that the players does to enimes
         ATTACKSPEED,    //Increases the attack speed of the player
-        BONUSHEALTH,    //Adds health to the player that surpises thier max health
+        BONUSHEALTH,    //Adds health to the player that surpises their max health
         RUSH,           //Increases the players move speed
         HOPS,           //Increases the players jump speed
-
     }
+
     public PowerUPType myPowerUPType;
     private float Timer;
     private bool isActive;

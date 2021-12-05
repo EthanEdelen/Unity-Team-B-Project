@@ -33,21 +33,22 @@ public class Collectable_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SpawnTimer <= 0)
+        // code for spawning coin in middle every 5 seconds
+        /*if (SpawnTimer <= 0)
         {
             //Calling spawn type for rng
             //EffectSeeder(2);
+            Debug.Log("Spawned Coin");
             Spawning();
             SpawnTimer = 5;
         }
         else
-            SpawnTimer -= Time.deltaTime;
+            SpawnTimer -= Time.deltaTime;*/
     }
 
     // used to find a spawn point inside the SpawnerBox
     private static Vector3 RandomPointInBox(Vector3 center, Vector3 size)
     {
-
         return center + new Vector3(
            (Random.value - 0.5f) * size.x,
            (Random.value - 0.5f) * size.y,
@@ -128,8 +129,6 @@ public class Collectable_Manager : MonoBehaviour
         Vector3 SpawnPoint = RandomPointInBox(renderer.bounds.center, renderer.bounds.size);
         GameObject collectable = (GameObject)Instantiate(COIN_prefab, SpawnPoint, Quaternion.identity);
         //spawned.Add(collectable);
-        
-
     }
 
     public void Spawning(Vector3 spawnpoint)
@@ -138,8 +137,6 @@ public class Collectable_Manager : MonoBehaviour
         //EffectSeeder(type);
         GameObject collectable = (GameObject)Instantiate(COIN_prefab, spawnpoint, Quaternion.identity);
         //spawned.Add(collectable);
-
-
     }
 
     public void Spawning(Vector3 spawnPoint, GameObject spawnedPrefab)
@@ -148,7 +145,5 @@ public class Collectable_Manager : MonoBehaviour
         //EffectSeeder(type);        
         GameObject collectable = (GameObject)Instantiate(spawnedPrefab, spawnPoint, Quaternion.identity);
         //spawned.Add(collectable);
-
-
     }
 }
