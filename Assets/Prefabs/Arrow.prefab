@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2274642507117543021}
   - component: {fileID: 2530028337489197754}
   - component: {fileID: 3186655991121602560}
+  - component: {fileID: -3039298026722288254}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -125,3 +126,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 165084410c694d845a90e3b4e0a8be44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-3039298026722288254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461702424660043452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd6941dba34dd3489252ec512b849d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  owner: {fileID: 3668458527806111402, guid: a6e9b558fbddbce478377ccd8638ac13, type: 3}
+  damage: 1
+  lifeTime: 0
+  audioSource: {fileID: 0}
+  firedClip: {fileID: 0}
+  hitClip: {fileID: 0}
+  meshRenderer: {fileID: 0}
+  rb: {fileID: 0}
